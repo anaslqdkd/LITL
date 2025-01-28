@@ -1,10 +1,7 @@
 extends Control
 
-func _ready() -> void:
-	var vbox = $VBoxContainer
-	vbox.set_size( Vector2(200, 200), false)
-
 func _on_start_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://src/main_game.tscn")
 	print("the start button was pressed")
 
 
