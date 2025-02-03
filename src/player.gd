@@ -1,27 +1,25 @@
-extends Area2D
+extends CharacterBody3D
 
-@export var speed = 400 # How fast the player will move (pixels/sec).
-var screen_size # Size of the game window
+const SPEED = 5.0
+const JUMP_VELOCITY = 4.5
 
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-func _ready():
-	screen_size = get_viewport_rect().size
+func _physics_process(delta: float) -> void:
 
-func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
+	if not is_on_floor():
+		print("not on the floor")
+		velocity.y -= gravity*delta
 
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
 	else:
-		$AnimatedSprite2D.stop()
-	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+	move_and_slide()
