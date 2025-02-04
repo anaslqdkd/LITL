@@ -1,27 +1,24 @@
-extends Area2D
+extends CharacterBody3D
 
-@export var speed = 400 # How fast the player will move (pixels/sec).
-var screen_size # Size of the game window
+@export var speed: float = 4.0  # Vitesse de déplacement
+@export var sprite_3d: Sprite3D  # Référence au sprite
 
+func _physics_process(delta):
+	var direction = Vector3.ZERO
 
-func _ready():
-	screen_size = get_viewport_rect().size
-
-func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
+	# Récupération des entrées clavier
 	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
+		direction.x += speed
+	elif Input.is_action_pressed("move_left"):
+		direction.x -= speed
+	elif Input.is_action_pressed("move_up"):
+		direction.z -= speed
+	elif Input.is_action_pressed("move_down"):
+		direction.z += speed
 
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
-	else:
-		$AnimatedSprite2D.stop()
-	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+	# Normalisation pour éviter d'aller plus vite en diagonale
+	#direction = direction.normalized()
+
+	# Appliquer le mouvement
+	velocity = direction * speed
+	move_and_slide()

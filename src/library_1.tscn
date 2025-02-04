@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7wwchqv7bfsc"]
+
+[ext_resource type="PackedScene" uid="uid://chmdec0eswtq6" path="res://src/player.tscn" id="1_i14c5"]
+
+[sub_resource type="Environment" id="Environment_i14c5"]
+ambient_light_source = 3
+ambient_light_color = Color(0.12653, 0.272333, 0.477574, 1)
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i14c5")
+
+[node name="Library" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Library"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0892944, 0, 0)
+size = Vector3(20, 1, 20)
+
+[node name="Player" parent="." instance=ExtResource("1_i14c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55042, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+light_energy = 0.8
+shadow_enabled = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.63279, 5, 0)
+light_energy = 10.0
+shadow_enabled = true
+spot_angle = 24.2145

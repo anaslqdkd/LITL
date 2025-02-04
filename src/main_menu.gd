@@ -1,7 +1,7 @@
 extends Control
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://src/main_game.tscn")
+	get_tree().change_scene_to_file("res://src/library_1.tscn")
 	print("the start button was pressed")
 
 
