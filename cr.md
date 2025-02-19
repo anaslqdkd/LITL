@@ -24,5 +24,3 @@
 ### Gestion du travail
 - Lowell (<3) s'occupe de la partie bibliothéque et moi (bonjour) du premier niveau
 - on fait des branches associés à la partie qu'on traîte, ex: level1
-
-
