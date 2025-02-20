@@ -532,7 +532,7 @@ script = ExtResource("1_onrkg")
 shape = SubResource("ConvexPolygonShape3D_lowyb")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.088285, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.011652, 0)
 billboard = 1
 shaded = true
 alpha_cut = 2
