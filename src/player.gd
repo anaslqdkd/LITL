@@ -6,12 +6,25 @@ const JUMP_VELOCITY = 4.5
 @onready var all_interactions = []
 @onready var interactLabel = $InteractionComponents/InteractionLabel
 
+
+@export var mesh_object: MeshInstance3D
+
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+func _ready():
+	var position_vector = Vector2(100, 200)
+	var dialog_lines = ["Hello, traveler!"]
+
+	# DialogManager.start_dialog(position_vector, dialog_lines)
+	# var dialog = preload("res://src/dialog_box_v2.tscn").instance()
+	# get_tree().current_scene.add_child(dialog)
+	# dialog.start_dialog(["Hello!", "Welcome to the world!"])
+	mesh_object.visible = false
 
 func _physics_process(delta: float) -> void:
 
 	if not is_on_floor():
-		print("not on the floor")
+		# print("not on the floor")
 		velocity.y -= gravity*delta
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -29,16 +42,20 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_interaction_area_area_entered(area: Area3D) -> void:
-	all_interactions.insert(0, area)
-	update_interactions()
+	# all_interactions.insert(0, area)
+	# update_interactions()
+	DialogManager.test()
+
+	mesh_object.visible = true
 
 
 func _on_interaction_area_area_exited(area: Area3D) -> void:
-	all_interactions.erase(area)
-	update_interactions()
+	# all_interactions.erase(area)
+	# update_interactions()
+	mesh_object.visible = false
 
 func update_interactions():
-	print("guugfufds")
+	# print("guugfufds")
 	if all_interactions:
 		interactLabel.text = all_interactions[0].interact_label
 	else:
