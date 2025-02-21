@@ -55,8 +55,9 @@ func _on_interaction_area_area_exited(area: Area3D) -> void:
 	mesh_object.visible = false
 
 func update_interactions():
+	pass
 	# print("guugfufds")
-	if all_interactions:
-		interactLabel.text = all_interactions[0].interact_label
-	else:
-		interactLabel.text = ""
+	# if all_interactions:
+	# 	interactLabel.text = all_interactions[0].interact_label
+	# else:
+	# 	interactLabel.text = ""

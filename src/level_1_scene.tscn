@@ -220,7 +220,6 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, -28)
 
 [node name="topWall" type="GridMap" parent="room"]
-visible = false
 mesh_library = ExtResource("3_4liyt")
 cell_size = Vector3(1, 1, 1)
 data = {
