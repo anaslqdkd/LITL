@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2g3l3l1ix3e6"]
+[gd_scene load_steps=4 format=3 uid="uid://b2g3l3l1ix3e6"]
 
 [ext_resource type="Script" uid="uid://4kjy2ct5tjwr" path="res://src/Interactions/dialog_box.gd" id="1_wqky5"]
 [ext_resource type="Texture2D" uid="uid://d08hn63rws0rn" path="res://assets/sprites/dialog_box.png" id="2_fqbxt"]
+[ext_resource type="FontFile" uid="uid://cmmjcpix7aa0s" path="res://assets/fonts/JMH Typewriter.ttf" id="3_fqbxt"]
 
 [node name="DialogBox" type="Control"]
 layout_mode = 3
@@ -38,6 +39,7 @@ offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_fqbxt")
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "a fost odata ca niciodata o baba si un mosneag care au murit de mititei. Si dupa au trait fericit pana la adanci batranete"

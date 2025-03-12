@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk7m6ne8o4nxr"]
+
+[ext_resource type="Script" uid="uid://bg6ms2j57al8o" path="res://src/Interactions/keypad/keypadButton.gd" id="1_8h3oj"]
+[ext_resource type="Script" uid="uid://c8rpy54ipmbo8" path="res://src/Interactions/keypad/keypad.gd" id="1_e6qdq"]
+
+[node name="keypad" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_right = -405.0
+offset_bottom = -220.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e6qdq")
+
+[node name="numbers" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 111.0
+offset_top = -14.0
+offset_right = 261.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 5
+columns = 3
+
+[node name="1" type="Button" parent="numbers"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "1
+"
+script = ExtResource("1_8h3oj")
+
+[node name="2" type="Button" parent="numbers"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "2"
+
+[node name="3" type="Button" parent="numbers"]
+layout_mode = 2
+text = "3"
+
+[node name="4" type="Button" parent="numbers"]
+layout_mode = 2
+text = "4
+"
+
+[node name="5" type="Button" parent="numbers"]
+layout_mode = 2
+text = "5"
+
+[node name="6" type="Button" parent="numbers"]
+layout_mode = 2
+text = "6"
+
+[node name="7" type="Button" parent="numbers"]
+layout_mode = 2
+text = "7"
+
+[node name="8" type="Button" parent="numbers"]
+layout_mode = 2
+text = "8"
+
+[node name="9" type="Button" parent="numbers"]
+layout_mode = 2
+text = "9
+"
+
+[node name="non" type="Button" parent="numbers"]
+layout_mode = 2
+text = "non"
+
+[node name="0" type="Button" parent="numbers"]
+layout_mode = 2
+text = "0"
+
+[node name="oui" type="Button" parent="numbers"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "oui
+"
+
+[connection signal="pressed" from="numbers/1" to="numbers/1" method="_on_pressed"]
