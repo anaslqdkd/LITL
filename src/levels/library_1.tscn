@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://byju8x4pf7533" path="res://assets/particles/circle_05.png" id="4_01hco"]
 [ext_resource type="PackedScene" uid="uid://d3xvo57cm6c1i" path="res://src/chandelier.tscn" id="5_8fnjk"]
 [ext_resource type="MeshLibrary" uid="uid://cq6usy1jsasv2" path="res://new_mesh_library.tres" id="6_ep3ay"]
-[ext_resource type="Script" uid="uid://crd7hcs73gsvn" path="res://src/Interactions/interactable.gd" id="7_cbera"]
+[ext_resource type="Script" uid="uid://b350ud5guf1hk" path="res://src/levels/door.gd" id="7_cbera"]
 [ext_resource type="ArrayMesh" uid="uid://24or723yakdl" path="res://assets/meshes/door.obj" id="7_mihkl"]
 
 [sub_resource type="Animation" id="Animation_qgpte"]
@@ -323,7 +323,8 @@ skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Objects/Door"]
 script = ExtResource("7_cbera")
-prompt_message = "Dooooooorrrrr"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Door/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_jjbui")
+
+[connection signal="interacted" from="Objects/Door/StaticBody3D" to="Objects/Door/StaticBody3D" method="_on_interacted"]
