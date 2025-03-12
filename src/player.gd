@@ -10,7 +10,7 @@ var last_direction = "left"
 func _physics_process(delta: float) -> void:
 
 	if not is_on_floor():
-		print("not on the floor")
+		# print("not on the floor")
 		velocity.y -= gravity*delta
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
