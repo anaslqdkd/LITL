@@ -9,5 +9,3 @@ func _on_interacted() -> void:
 
 	var keypad_instance = keypad_scene.instantiate()
 	add_child(keypad_instance)
-	get_parent().visible = false
-	print("buuu")

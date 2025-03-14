@@ -8,9 +8,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 2.0
-offset_right = -405.0
-offset_bottom = -220.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = -403.0
+offset_bottom = -221.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e6qdq")
@@ -23,10 +24,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 111.0
-offset_top = -14.0
-offset_right = 261.0
-offset_bottom = 186.0
+offset_left = -74.5
+offset_top = -104.0
+offset_right = 75.5
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 2
@@ -38,57 +39,119 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "1
-"
+text = "1"
 script = ExtResource("1_8h3oj")
 
 [node name="2" type="Button" parent="numbers"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "2"
+script = ExtResource("1_8h3oj")
 
 [node name="3" type="Button" parent="numbers"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "3"
+script = ExtResource("1_8h3oj")
 
 [node name="4" type="Button" parent="numbers"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-text = "4
-"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "4"
+script = ExtResource("1_8h3oj")
 
 [node name="5" type="Button" parent="numbers"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "5"
+script = ExtResource("1_8h3oj")
 
 [node name="6" type="Button" parent="numbers"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "6"
+script = ExtResource("1_8h3oj")
 
 [node name="7" type="Button" parent="numbers"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "7"
+script = ExtResource("1_8h3oj")
 
 [node name="8" type="Button" parent="numbers"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "8"
+script = ExtResource("1_8h3oj")
 
 [node name="9" type="Button" parent="numbers"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-text = "9
-"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "9"
+script = ExtResource("1_8h3oj")
 
 [node name="non" type="Button" parent="numbers"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-text = "non"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "10"
+script = ExtResource("1_8h3oj")
 
 [node name="0" type="Button" parent="numbers"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "0"
+script = ExtResource("1_8h3oj")
 
 [node name="oui" type="Button" parent="numbers"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-text = "oui
-"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "oui"
+script = ExtResource("1_8h3oj")
+
+[node name="codeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.407595
+anchor_top = 0.283069
+anchor_right = 0.585279
+anchor_bottom = 0.357296
+offset_right = -0.185
+offset_bottom = -0.0580025
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="numbers/1" to="numbers/1" method="_on_pressed"]
+[connection signal="pressed" from="numbers/2" to="numbers/2" method="_on_pressed"]
+[connection signal="pressed" from="numbers/3" to="numbers/3" method="_on_pressed"]
+[connection signal="pressed" from="numbers/4" to="numbers/4" method="_on_pressed"]
+[connection signal="pressed" from="numbers/5" to="numbers/5" method="_on_pressed"]
+[connection signal="pressed" from="numbers/6" to="numbers/6" method="_on_pressed"]
+[connection signal="pressed" from="numbers/7" to="numbers/7" method="_on_pressed"]
+[connection signal="pressed" from="numbers/8" to="numbers/8" method="_on_pressed"]
+[connection signal="pressed" from="numbers/9" to="numbers/9" method="_on_pressed"]
+[connection signal="pressed" from="numbers/non" to="numbers/non" method="_on_pressed"]
+[connection signal="pressed" from="numbers/0" to="numbers/0" method="_on_pressed"]
+[connection signal="pressed" from="numbers/oui" to="numbers/oui" method="_on_pressed"]
