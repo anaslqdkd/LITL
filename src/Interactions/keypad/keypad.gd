@@ -10,6 +10,8 @@ signal on_keypad_press
 signal on_correct_password
 signal on_wrong_password
 
+@onready var submit_button = $numbers/submitButton
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +22,7 @@ func _ready() -> void:
 	code_label.text = ""
 	self.connect("on_correct_password", Callable(self, "_on_password_correct"))
 	self.connect("on_wrong_password", Callable(self, "_on_password_wrong"))
+	submit_button.connect("pressed", Callable(self, "_on_submit_button_pressed"))
 
 
 
@@ -30,25 +33,31 @@ func _process(delta: float) -> void:
 
 
 func on_button_interact(value):
-	password += str(value)
-	code_label.text += str(value)
+	if value in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]:
+		password += str(value)
+		code_label.text += str(value)
+	if value == "non":
+		if password.length() > 0:
+			password = password.substr(0, password.length() - 1)
+			code_label.text = code_label.text.substr(0, code_label.text.length() - 1)
 
-	if password.length() == correct_password.length():
-		if password == correct_password:
-			emit_signal("on_correct_password", password)
-		else:
-			emit_signal("on_wrong_password", password)
 	emit_signal("on_keypad_press", password)
 	print("Password: " + password)
 
 func _on_password_correct(password):
 	#FIXME: à voir ce qui se passe lorsque la porte est ouverte
-	code_label.text = "buu"
+	code_label.text = "access granted!"
 	print("the correct password was entered")
 	self.queue_free()
 
 func _on_password_wrong(password):
 	self.password = ""
 	code_label.text = ""
-
 	print("incorrect password!")
+
+func _on_submit_button_pressed():
+	if password == correct_password:
+		emit_signal("on_correct_password", password)
+	else:
+		emit_signal("on_wrong_password", password)
+	print("the button submit was pressed")

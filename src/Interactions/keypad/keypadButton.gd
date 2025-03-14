@@ -1,4 +1,3 @@
-
 extends Button
 
 signal on_interact

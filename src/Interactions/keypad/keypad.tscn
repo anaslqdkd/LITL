@@ -111,7 +111,7 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "10"
+text = "non"
 script = ExtResource("1_8h3oj")
 
 [node name="0" type="Button" parent="numbers"]
@@ -122,7 +122,7 @@ size_flags_vertical = 4
 text = "0"
 script = ExtResource("1_8h3oj")
 
-[node name="oui" type="Button" parent="numbers"]
+[node name="submitButton" type="Button" parent="numbers"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -154,4 +154,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="numbers/9" to="numbers/9" method="_on_pressed"]
 [connection signal="pressed" from="numbers/non" to="numbers/non" method="_on_pressed"]
 [connection signal="pressed" from="numbers/0" to="numbers/0" method="_on_pressed"]
-[connection signal="pressed" from="numbers/oui" to="numbers/oui" method="_on_pressed"]
+[connection signal="pressed" from="numbers/submitButton" to="numbers/submitButton" method="_on_pressed"]
