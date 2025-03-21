@@ -11,10 +11,9 @@ func _input(event):
 			go_to_scene("level_1", "level_1")
 		else:
 			go_to_scene("library", "library")
-	# NOTE: modif ici
 
-	# if event.is_action_pressed("ui_cancel"): ### Esc pour afficher le dialogue
-	# 	_load_dialog_box()
+	if event.is_action_pressed("ui_text_delete"): ### Suppr pour afficher le dialogue
+		_load_dialog_box()
 
 func go_to_scene(scene_tag, dest):
 	var scene_to_load
@@ -34,9 +33,10 @@ func go_to_scene(scene_tag, dest):
 
 
 func _load_dialog_box():
-	var control_scene = load("res://src/Interactions/dialog_box.tscn")
-	if not control_scene:
+	var dialog_box_scene = load("res://src/Interactions/dialog_box.tscn")
+	if not dialog_box_scene:
 		print("Error: Failed to load dialog scene")
 		return 
-	var control_instance = control_scene.instantiate()
-	add_child(control_instance)
+	var dialog_box_instance = dialog_box_scene.instantiate()
+	dialog_box_instance.dialog_number = "dialog2"
+	add_child(dialog_box_instance)

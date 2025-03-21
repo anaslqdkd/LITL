@@ -1,0 +1,16 @@
+{
+  "dialog1": {
+    "lines": [
+      "first line of dialog 1",
+      "second line of dialog 1",
+      "third line of dialog 1"
+    ]
+  },
+  "dialog2": {
+    "lines": [
+      "first line of dialog 2",
+      "second line of dialog 2",
+      "third line of dialog 2"
+    ]
+  }
+}
