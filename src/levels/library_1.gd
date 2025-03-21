@@ -38,11 +38,3 @@ func _load_dialog_box():
 		return 
 	var control_instance = control_scene.instantiate()
 	add_child(control_instance)
-
-
-
-
-
-
-func _on_static_body_3d_interacted(body: Variant) -> void:
-	pass # Replace with function body.
