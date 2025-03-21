@@ -10,6 +10,8 @@ var current_page: int = 0
 
 var direction_right: bool = true
 
+var book: String
+
 var forward_animations = [
 	"first_page",
 	"second_page",
@@ -19,19 +21,25 @@ var forward_animations = [
 	"close_book",
 	"return_book"
 	]
-var page_contents = [
-	["", ""],
-	["", "page3 content"],
-	["page4 content", "page5 content"],
-	["page6 content", "page7 content"],
-	["page7 content", "page8 content"],
-	["page9 content", ""],
-	["", ""],
-	]
+
+var page_contents: Array
+
+func _load_books_data():
+	var books_string = FileAccess.get_file_as_string("res://src/levels/data/books_data.json") 
+	var books_as_dict = JSON.parse_string(books_string)
+	var exemple = books_as_dict[self.book]["pages"]
+	self.page_contents = exemple
+
 
 func _ready() -> void:
 	_update_buttons()
+	_load_books_data()
 	book_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		queue_free()
+
 
 func _clear_pages():
 	right_page_text.visible = false

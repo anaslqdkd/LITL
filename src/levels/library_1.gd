@@ -11,8 +11,10 @@ func _input(event):
 			go_to_scene("level_1", "level_1")
 		else:
 			go_to_scene("library", "library")
-	if event.is_action_pressed("ui_cancel"): ### Esc pour afficher le dialogue
-		_load_dialog_box()
+	# NOTE: modif ici
+
+	# if event.is_action_pressed("ui_cancel"): ### Esc pour afficher le dialogue
+	# 	_load_dialog_box()
 
 func go_to_scene(scene_tag, dest):
 	var scene_to_load
