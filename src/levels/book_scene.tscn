@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://qgc1eurub8ed"]
+[gd_scene load_steps=72 format=3 uid="uid://qgc1eurub8ed"]
 
 [ext_resource type="Script" uid="uid://djvffj5xsqk5x" path="res://src/levels/book_scene.gd" id="1_2slc0"]
 [ext_resource type="Texture2D" uid="uid://cbuemoiimax27" path="res://assets/spritesheet/Book_Sheet_64x64.png" id="1_kd3pa"]
@@ -159,6 +159,46 @@ region = Rect2(448, 192, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2wn3y"]
 atlas = ExtResource("1_kd3pa")
 region = Rect2(512, 192, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwus0"]
+atlas = ExtResource("1_kd3pa")
+region = Rect2(512, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmv54"]
+atlas = ExtResource("1_kd3pa")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7n5y"]
+atlas = ExtResource("1_kd3pa")
+region = Rect2(64, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glefq"]
+atlas = ExtResource("1_kd3pa")
+region = Rect2(128, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i07lr"]
+atlas = ExtResource("1_kd3pa")
+region = Rect2(192, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mga4g"]
+atlas = ExtResource("1_kd3pa")
+region = Rect2(256, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvpjj"]
+atlas = ExtResource("1_kd3pa")
+region = Rect2(320, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33o4u"]
+atlas = ExtResource("1_kd3pa")
+region = Rect2(384, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqmuy"]
+atlas = ExtResource("1_kd3pa")
+region = Rect2(448, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsxce"]
+atlas = ExtResource("1_kd3pa")
+region = Rect2(512, 320, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ehe06"]
 atlas = ExtResource("1_kd3pa")
@@ -378,6 +418,41 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_lwus0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmv54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7n5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glefq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i07lr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mga4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvpjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33o4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqmuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsxce")
+}],
+"loop": false,
+"name": &"return_book",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ehe06")
 }, {
 "duration": 1.0,
@@ -466,7 +541,6 @@ offset_bottom = 105.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hxtpq")
 theme_override_font_sizes/font_size = 11
-text = "This is a book and it says things, idk what though"
 autowrap_mode = 3
 
 [node name="leftPageLabel" type="Label" parent="."]
@@ -478,15 +552,14 @@ offset_bottom = 95.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hxtpq")
 theme_override_font_sizes/font_size = 11
-text = "This is the text on the other page"
 autowrap_mode = 3
 
 [node name="ButtonNext" type="Button" parent="."]
 layout_mode = 1
 offset_left = 146.0
 offset_top = 159.0
-offset_right = 184.0
-offset_bottom = 172.0
+offset_right = 186.0
+offset_bottom = 179.0
 
 [node name="Label" type="Label" parent="ButtonNext"]
 layout_mode = 1
@@ -499,13 +572,14 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "->"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ButtonPrev" type="Button" parent="."]
 layout_mode = 1
 offset_left = -160.0
 offset_top = 159.0
-offset_right = -122.0
-offset_bottom = 172.0
+offset_right = -120.0
+offset_bottom = 179.0
 
 [node name="Label" type="Label" parent="ButtonPrev"]
 layout_mode = 1
@@ -518,6 +592,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "<-"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="ButtonNext" to="." method="_on_button_next_pressed"]
 [connection signal="pressed" from="ButtonPrev" to="." method="_on_button_prev_pressed"]
