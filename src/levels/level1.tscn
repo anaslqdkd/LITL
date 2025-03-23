@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://xjawx0r74o54"]
+[gd_scene load_steps=34 format=3 uid="uid://xjawx0r74o54"]
 
 [ext_resource type="Script" uid="uid://c1vd7bdrncvh1" path="res://src/levels/library_1.gd" id="1_tyup7"]
 [ext_resource type="PackedScene" uid="uid://chmdec0eswtq6" path="res://src/player.tscn" id="2_ou3gi"]
@@ -11,6 +11,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dt5rdyinw5agc" path="res://assets/meshes/table.obj" id="9_ipgu1"]
 [ext_resource type="Texture2D" uid="uid://sg8yhvll0fa3" path="res://assets/meshes/lirbrary_bord.png" id="10_bsnmq"]
 [ext_resource type="Script" uid="uid://c4c5r80rt2r3r" path="res://src/levels/table.gd" id="11_bsnmq"]
+[ext_resource type="Resource" uid="uid://cpgkcgndx5xvg" path="res://src/inventory/items/explosion.tres" id="12_vm2gj"]
 
 [sub_resource type="Animation" id="Animation_qgpte"]
 resource_name = "Opening_Cutscene"
@@ -301,6 +302,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vm2gj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Table"]
 script = ExtResource("11_bsnmq")
+item = ExtResource("12_vm2gj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Table/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ipgu1")

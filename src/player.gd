@@ -7,6 +7,8 @@ const IDLE_DELAY = 0.2
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var last_direction = "left"
 
+@export var inv: Inv
+
 func _physics_process(delta: float) -> void:
 
 	if not is_on_floor():
@@ -46,3 +48,7 @@ func _physics_process(delta: float) -> void:
 			animation.play("idle_" + last_direction)
 			
 	move_and_slide()
+
+
+func collect(item):
+	inv.insert(item)
