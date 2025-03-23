@@ -9,8 +9,10 @@ var last_direction = "left"
 
 @export var inv: Inv
 
-func _physics_process(delta: float) -> void:
+var can_move = true
 
+func _physics_process(delta: float) -> void:
+	
 	if not is_on_floor():
 		# print("not on the floor")
 		velocity.y -= gravity*delta
@@ -47,8 +49,18 @@ func _physics_process(delta: float) -> void:
 			await get_tree().create_timer(IDLE_DELAY).timeout
 			animation.play("idle_" + last_direction)
 			
-	move_and_slide()
+	if can_move:
+		move_and_slide()
 
 
 func collect(item):
 	inv.insert(item)
+
+func has_item(item) -> bool:
+	for slot in inv.slots:
+		if slot.item == item:
+			return true
+	return false
+
+func set_movement(enabled: bool):
+	self.can_move = enabled
