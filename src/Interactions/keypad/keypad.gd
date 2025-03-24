@@ -48,6 +48,8 @@ func _on_password_correct(password):
 	#FIXME: à voir ce qui se passe lorsque la porte est ouverte
 	code_label.text = "access granted!"
 	print("the correct password was entered")
+	var current_scene = get_tree().current_scene 
+	current_scene.is_interacting = false
 	self.queue_free()
 
 func _on_password_wrong(password):

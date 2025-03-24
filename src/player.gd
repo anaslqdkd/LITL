@@ -62,5 +62,10 @@ func has_item(item) -> bool:
 			return true
 	return false
 
-func set_movement(enabled: bool):
-	self.can_move = enabled
+func _process(delta: float) -> void:
+	var current_scene = get_tree().current_scene
+	var player = current_scene.get_node_or_null("Player")
+	if current_scene.is_interacting:
+		player.can_move = false
+	else:
+		player.can_move = true
