@@ -11,7 +11,7 @@ func _input_event(viewport, event, shape_idx) -> void:
 func _on_sprite_clicked(): 
 	current_scene = get_tree().current_scene
 	player = current_scene.get_node_or_null("Player")
-	var key_item = preload("res://src/inventory/items/key.tres")
-	player.collect(key_item)
-	NotificationPanel.send_notification("key added to the inventory")
+	var magnifying_glass = preload("res://src/inventory/items/magnifying_glass.tres")
+	player.collect(magnifying_glass)
+	NotificationPanel.send_notification("magnifying glass added to the inventory")
 	queue_free()

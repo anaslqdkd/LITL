@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b7wwchqv7bfsc"]
+[gd_scene load_steps=46 format=3 uid="uid://b7wwchqv7bfsc"]
 
 [ext_resource type="Script" uid="uid://c1vd7bdrncvh1" path="res://src/levels/library_1.gd" id="1_cbera"]
 [ext_resource type="PackedScene" uid="uid://chmdec0eswtq6" path="res://src/player.tscn" id="2_odxcg"]
@@ -17,6 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://c181wg57ndtc8" path="res://assets/images/frame_image.jpg" id="15_7a8mr"]
 [ext_resource type="AudioStream" uid="uid://cs72mgou1ep5y" path="res://assets/sounds/chest_open.mp3" id="16_jdd1v"]
 [ext_resource type="AudioStream" uid="uid://cgvf1hn27waei" path="res://assets/sounds/item_sound.mp3" id="17_0r02l"]
+[ext_resource type="ArrayMesh" uid="uid://ct648e2rk8rrc" path="res://assets/meshes/lirbrary2.obj" id="18_7tqwt"]
+[ext_resource type="Script" uid="uid://b88wgx0bfljdi" path="res://src/levels/interactable_book.gd" id="19_vjenb"]
+[ext_resource type="Script" uid="uid://cowtju2b1348d" path="res://src/levels/code_book.gd" id="20_vjenb"]
+[ext_resource type="Script" uid="uid://de5ys5haoxi42" path="res://src/levels/note_book.gd" id="21_10xre"]
 
 [sub_resource type="Animation" id="Animation_qgpte"]
 resource_name = "Opening_Cutscene"
@@ -185,6 +189,9 @@ albedo_texture = ExtResource("14_7a8mr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0r02l"]
 albedo_texture = ExtResource("15_7a8mr")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_10xre"]
+points = PackedVector3Array(1.93735, 4, 2, -2, 0.00039481, -2, -2, 0.00039481, 2, 2, 0.00039481, -2, -2, 3.99961, -2, 2, 0.00039481, 2, 1.93735, 4, -2, -2, 3.99961, 2)
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_cbera")
@@ -380,6 +387,39 @@ stream = ExtResource("16_jdd1v")
 [node name="PickItemSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_0r02l")
 
+[node name="Book" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -7.26459, 1.07445, 3.63656)
+mesh = ExtResource("18_7tqwt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Book"]
+script = ExtResource("19_vjenb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Book/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_10xre")
+
+[node name="Code_Book" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.60188, 1.07445, 3.85229)
+mesh = ExtResource("18_7tqwt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Code_Book"]
+script = ExtResource("20_vjenb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Code_Book/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_10xre")
+
+[node name="Note_Book" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.47265, 1.13743, 3.85229)
+mesh = ExtResource("18_7tqwt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Note_Book"]
+script = ExtResource("21_10xre")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Note_Book/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_10xre")
+
 [connection signal="interacted" from="Objects/Door/StaticBody3D" to="Objects/Door/StaticBody3D" method="_on_interacted"]
 [connection signal="interaction_finished" from="Objects/Door/StaticBody3D" to="Objects/Door/StaticBody3D" method="_on_interaction_finished"]
 [connection signal="interacted" from="Chest/StaticBody3D" to="Chest/StaticBody3D" method="_on_interacted"]
+[connection signal="interacted" from="Book/StaticBody3D" to="Book/StaticBody3D" method="_on_interacted"]
+[connection signal="interacted" from="Code_Book/StaticBody3D" to="Code_Book/StaticBody3D" method="_on_interacted"]
+[connection signal="interacted" from="Note_Book/StaticBody3D" to="Note_Book/StaticBody3D" method="_on_interacted"]

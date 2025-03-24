@@ -9,9 +9,9 @@ var is_open = false
 func _ready() -> void:
 	inv.update.connect(update_slots)
 	update_slots()
-	close() 
+	# close() 
 	mouse_filter = MOUSE_FILTER_PASS
-	# open()
+	open()
 
 func update_slots():
 	for i in range(min(inv.slots.size(), slots.size())):
@@ -25,9 +25,9 @@ func _process(delta: float) -> void:
 			open()
 
 func open():
-	visible = true
-	is_open = true
+	self.visible = true
+	self.is_open = true
 
 func close():
-	visible = false
-	is_open = false
+	self.visible = false
+	self.is_open = false

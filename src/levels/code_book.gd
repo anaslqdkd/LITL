@@ -14,11 +14,3 @@ func _on_interacted() -> void:
 	self.book_instance = book_scene.instantiate()
 	self.book_instance.book = "book2"
 	add_child(book_instance)
-	var key_item = preload("res://src/inventory/items/key.tres")
-	var key_scene = load("res://src/inventory/key.tscn")  
-	if key_scene:
-		key_instance = key_scene.instantiate()
-	if player.has_item(key_item):
-		return
-	else:
-		add_child(key_instance)

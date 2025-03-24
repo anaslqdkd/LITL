@@ -2,11 +2,12 @@ extends Interactable
 
 var book_instance = null
 var book_scene = preload("res://src/levels/book_scene.tscn")
-var key_instance: Area2D
+var note_instance = null
 var current_scene = null
 var player = null
 
 func _on_interacted() -> void:
+	print("GAGAGAGAGAGAGGAGGGGGGGGGGGGGGGGGGG")
 	current_scene = get_tree().current_scene
 	player = current_scene.get_node_or_null("Player")
 	if not book_scene:
@@ -14,11 +15,12 @@ func _on_interacted() -> void:
 	self.book_instance = book_scene.instantiate()
 	self.book_instance.book = "book2"
 	add_child(book_instance)
-	var key_item = preload("res://src/inventory/items/key.tres")
-	var key_scene = load("res://src/inventory/key.tscn")  
-	if key_scene:
-		key_instance = key_scene.instantiate()
-	if player.has_item(key_item):
+	var note_item = preload("res://src/inventory/items/note.tres")
+	var note_scene = load("res://src/inventory/note.tscn")  
+	if note_scene:
+		print("the scene exists")
+		note_instance = note_scene.instantiate()
+	if player.has_item(note_item):
 		return
 	else:
-		add_child(key_instance)
+		add_child(note_instance)
