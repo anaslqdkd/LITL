@@ -5,7 +5,12 @@ const scene_level = preload("res://src/levels/level_1.tscn")
 const menu_scene = preload("res://src/main_menu.tscn")
 
 var level_tag = "library"
-var is_interacting = false
+var is_interacting: bool 
+
+
+func _ready() -> void:
+	pass
+
 
 func _input(event):
 	if event.is_action_pressed("ui_focus_next"): ### Actuellement TAB
@@ -17,8 +22,12 @@ func _input(event):
 	if event.is_action_pressed("ui_text_delete"): ### Suppr pour afficher le dialogue
 		_load_dialog_box()
 	if event.is_action_pressed("ui_cancel") and not is_interacting: 
-		get_tree().change_scene_to_packed(menu_scene)
+		open_menu()
 
+
+func open_menu():
+	self.is_interacting = true 
+	MenuManager.show()
 
 func go_to_scene(scene_tag, dest):
 	var scene_to_load

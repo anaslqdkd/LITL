@@ -9,6 +9,7 @@ signal interaction_finished()
 
 func _ready():
 	library_instance = get_tree().current_scene
+	print("the name of the library instance", library_instance.name)
 
 func interact():
 	if not library_instance.is_interacting:
