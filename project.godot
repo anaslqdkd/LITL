@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 LevelTransition="*res://level_transition.tscn"
 MenuManager="*res://src/ui/MenuManager.gd"
+NotificationPanel="*res://src/ui/notification_panel.tscn"
 
 [display]
 

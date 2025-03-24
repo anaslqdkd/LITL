@@ -34,3 +34,4 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
+scale = Vector2(0.08, 0.08)
