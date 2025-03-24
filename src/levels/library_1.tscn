@@ -345,4 +345,5 @@ script = ExtResource("9_01hco")
 shape = SubResource("ConcavePolygonShape3D_8fnjk")
 
 [connection signal="interacted" from="Objects/Door/StaticBody3D" to="Objects/Door/StaticBody3D" method="_on_interacted"]
+[connection signal="interaction_finished" from="Objects/Door/StaticBody3D" to="Objects/Door/StaticBody3D" method="_on_interaction_finished"]
 [connection signal="interacted" from="Chest/StaticBody3D" to="Chest/StaticBody3D" method="_on_interacted"]

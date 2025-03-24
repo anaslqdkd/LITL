@@ -5,6 +5,7 @@ class_name Interactable
 @export var prompt_message = "Interact"
 signal interacted()
 var library_instance = null
+signal interaction_finished()
 
 func _ready():
 	library_instance = get_tree().current_scene
@@ -16,4 +17,9 @@ func interact():
 	print("in interact function")
 
 func end_interaction():
+	interaction_finished.emit()
 	library_instance.is_interacting = false
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		end_interaction()

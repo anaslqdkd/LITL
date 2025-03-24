@@ -7,9 +7,6 @@ var keypad_instance = null
 var player = null
 var current_scene = null
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
-		_on_keypad_closed()
 
 func _on_interacted() -> void:
 	current_scene = get_tree().current_scene
@@ -24,7 +21,7 @@ func _on_interacted() -> void:
 	self.keypad_instance = keypad_scene.instantiate()
 	add_child(keypad_instance)
 
-func _on_keypad_closed():
+
+func _on_interaction_finished() -> void:
 	if keypad_instance:
 		keypad_instance.queue_free()
-	end_interaction()
