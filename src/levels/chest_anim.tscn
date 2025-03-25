@@ -10,33 +10,6 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0o532"]
 points = PackedVector3Array(-1.68878, 2.2, -1.31509, 1.7612, 3, 0.772629, 1.77433, 2.9, 0.999235, 1.79341, 0.00109636, -1.4, -1.77569, 0.0159298, 1.5, 1.77583, 0.0159298, 1.5, -1.77569, 2.29074, 1.5, -1.79327, 0.00109636, -1.4, 1.76399, 2.67135, -1.1, -1.7314, 2.97497, -0.7, -1.76107, 3, 0.772629, 1.77583, 2.29074, 1.5, 0.990273, 3, -0.76788, 1.68891, 2.2, -1.31509, -1.78069, 2.79417, -1, 1.77433, 2.9, -0.88495, -1.7742, 2.9, 0.999235, -0.990484, 3, -0.76788, -1.76386, 2.67135, -1.1, 1.73154, 2.97497, -0.7, 1.78082, 2.79417, -1, -1.7742, 2.9, -0.88495)
 
-[sub_resource type="Animation" id="Animation_sm5ii"]
-resource_name = "open_chest"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Closed:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Open:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.33),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
 [sub_resource type="Animation" id="Animation_2y1t7"]
 length = 0.001
 tracks/0/type = "value"
@@ -86,6 +59,33 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.39),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_sm5ii"]
+resource_name = "open_chest"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Closed:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Open:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
