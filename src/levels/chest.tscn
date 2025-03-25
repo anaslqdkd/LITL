@@ -1,0 +1,134 @@
+[gd_scene load_steps=14 format=3 uid="uid://q5sepxu3gari"]
+
+[ext_resource type="Script" uid="uid://cdrbpt4vb6pmn" path="res://src/levels/chest.gd" id="1_b7p1d"]
+[ext_resource type="ArrayMesh" uid="uid://dlpaelpc2aw0q" path="res://assets/meshes/chest_anim.obj" id="1_j7mk0"]
+[ext_resource type="Texture2D" uid="uid://b48djnmp3kjs5" path="res://assets/meshes/chest_anim.png" id="2_b7p1d"]
+[ext_resource type="Resource" uid="uid://dyi2s033hbrn6" path="res://src/inventory/items/magnifying_glass.tres" id="2_eam1q"]
+[ext_resource type="ArrayMesh" uid="uid://dbo2qx8o1elgk" path="res://assets/meshes/chest.obj" id="3_eam1q"]
+[ext_resource type="Texture2D" uid="uid://fihcmvqk15m5" path="res://assets/meshes/chest.png" id="4_lx5c5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7jf8"]
+albedo_texture = ExtResource("2_b7p1d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gcr17"]
+albedo_texture = ExtResource("4_lx5c5")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u5oov"]
+points = PackedVector3Array(-1.68878, 2.2, -1.31509, 1.7612, 3, 0.772629, 1.77433, 2.9, 0.999235, 1.79341, 0.00109636, -1.4, -1.77569, 0.0159298, 1.5, 1.77583, 0.0159298, 1.5, -1.77569, 2.29074, 1.5, -1.79327, 0.00109636, -1.4, 1.76399, 2.67135, -1.1, -1.7314, 2.97497, -0.7, -1.76107, 3, 0.772629, 1.77583, 2.29074, 1.5, 0.990273, 3, -0.76788, 1.68891, 2.2, -1.31509, -1.78069, 2.79417, -1, 1.77433, 2.9, -0.88495, -1.7742, 2.9, 0.999235, -0.990484, 3, -0.76788, -1.76386, 2.67135, -1.1, 1.73154, 2.97497, -0.7, 1.78082, 2.79417, -1, -1.7742, 2.9, -0.88495)
+
+[sub_resource type="Animation" id="Animation_451g8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D/Closed:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody3D/Open:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_eam1q"]
+resource_name = "close_chest"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D/Open:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.58),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody3D/Closed:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.58),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ulh1s"]
+resource_name = "open_chest"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D/Closed:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody3D/Open:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d8mjr"]
+_data = {
+&"RESET": SubResource("Animation_451g8"),
+&"close_chest": SubResource("Animation_eam1q"),
+&"open_chest": SubResource("Animation_ulh1s")
+}
+
+[node name="Chest" type="Node3D"]
+transform = Transform3D(-0.727893, 0, -0.685691, 0, 1, 0, 0.685691, 0, -0.727893, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+script = ExtResource("1_b7p1d")
+item = ExtResource("2_eam1q")
+
+[node name="Open" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("1_j7mk0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_a7jf8")
+
+[node name="Closed" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("3_eam1q")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gcr17")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_u5oov")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StaticBody3D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_d8mjr")
+}
+
+[connection signal="interacted" from="StaticBody3D" to="StaticBody3D" method="_on_interacted"]
+[connection signal="animation_finished" from="StaticBody3D/AnimationPlayer" to="StaticBody3D" method="_on_animation_player_animation_finished"]

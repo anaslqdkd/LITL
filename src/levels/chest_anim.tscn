@@ -1,0 +1,131 @@
+[gd_scene load_steps=14 format=3 uid="uid://bigaxgh24r3mh"]
+
+[ext_resource type="ArrayMesh" uid="uid://dbo2qx8o1elgk" path="res://assets/meshes/chest.obj" id="1_ccpan"]
+[ext_resource type="Script" uid="uid://cdrbpt4vb6pmn" path="res://src/levels/chest.gd" id="1_sm5ii"]
+[ext_resource type="Resource" uid="uid://dyi2s033hbrn6" path="res://src/inventory/items/magnifying_glass.tres" id="2_2y1t7"]
+[ext_resource type="Texture2D" uid="uid://fihcmvqk15m5" path="res://assets/meshes/chest.png" id="2_3vkaa"]
+[ext_resource type="ArrayMesh" uid="uid://dlpaelpc2aw0q" path="res://assets/meshes/chest_anim.obj" id="3_sm5ii"]
+[ext_resource type="Texture2D" uid="uid://b48djnmp3kjs5" path="res://assets/meshes/chest_anim.png" id="4_2y1t7"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0o532"]
+points = PackedVector3Array(-1.68878, 2.2, -1.31509, 1.7612, 3, 0.772629, 1.77433, 2.9, 0.999235, 1.79341, 0.00109636, -1.4, -1.77569, 0.0159298, 1.5, 1.77583, 0.0159298, 1.5, -1.77569, 2.29074, 1.5, -1.79327, 0.00109636, -1.4, 1.76399, 2.67135, -1.1, -1.7314, 2.97497, -0.7, -1.76107, 3, 0.772629, 1.77583, 2.29074, 1.5, 0.990273, 3, -0.76788, 1.68891, 2.2, -1.31509, -1.78069, 2.79417, -1, 1.77433, 2.9, -0.88495, -1.7742, 2.9, 0.999235, -0.990484, 3, -0.76788, -1.76386, 2.67135, -1.1, 1.73154, 2.97497, -0.7, 1.78082, 2.79417, -1, -1.7742, 2.9, -0.88495)
+
+[sub_resource type="Animation" id="Animation_sm5ii"]
+resource_name = "open_chest"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Closed:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Open:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_2y1t7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Closed:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Open:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0o532"]
+resource_name = "close_chest"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Open:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.39),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Closed:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.39),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0o532"]
+_data = {
+&"RESET": SubResource("Animation_2y1t7"),
+&"close_chest": SubResource("Animation_0o532"),
+&"open_chest": SubResource("Animation_sm5ii")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0o532"]
+albedo_texture = ExtResource("2_3vkaa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4quo"]
+albedo_texture = ExtResource("4_2y1t7")
+
+[node name="chestAnim" type="StaticBody3D"]
+script = ExtResource("1_sm5ii")
+item = ExtResource("2_2y1t7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_0o532")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0o532")
+}
+
+[node name="Closed" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_ccpan")
+surface_material_override/0 = SubResource("StandardMaterial3D_0o532")
+
+[node name="Open" type="MeshInstance3D" parent="."]
+visible = false
+mesh = ExtResource("3_sm5ii")
+surface_material_override/0 = SubResource("StandardMaterial3D_e4quo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 5.715
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]
