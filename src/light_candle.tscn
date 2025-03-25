@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ebbxsqa4iu3"]
+
+[node name="lightCandle" type="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0855557, 0)
+light_color = Color(0.941935, 0.7493, 0.301597, 1)
+light_energy = 7.303
+light_volumetric_fog_energy = 6.01
+light_size = 0.162
+distance_fade_begin = 164.12
+distance_fade_length = 754.73
+omni_range = 8.433

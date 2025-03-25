@@ -54,3 +54,7 @@ func _load_dialog_box():
 	var dialog_box_instance = dialog_box_scene.instantiate()
 	dialog_box_instance.dialog_number = "dialog2"
 	add_child(dialog_box_instance)
+
+
+func _on_interacted() -> void:
+	pass # Replace with function body.
