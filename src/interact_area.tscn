@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://qklfompi8iof"]
+
+[ext_resource type="Script" uid="uid://04ojqrqs53v2" path="res://src/interact_area.gd" id="1_sgmdh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w57vf"]
+
+[node name="InteractArea" type="Area3D"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_sgmdh")
+interact_label = "interract test"
+interact_value = "yepee"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5.07573, 2.08234, 0)
+shape = SubResource("SphereShape3D_w57vf")
+debug_color = Color(0.94, 0.1222, 0.5311, 0.960784)

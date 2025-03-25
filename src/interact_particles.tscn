@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=3 uid="uid://xsv85xtatv1y"]
+
+[ext_resource type="Texture2D" uid="uid://byju8x4pf7533" path="res://assets/particles/circle_05.png" id="1_vjoxo"]
+
+[sub_resource type="Curve" id="Curve_wdcs0"]
+_data = [Vector2(0, 0.105998), 0.0, -0.411601, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qgpte"]
+curve = SubResource("Curve_wdcs0")
+
+[sub_resource type="Gradient" id="Gradient_viq2h"]
+offsets = PackedFloat32Array(0, 0.43787, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p32id"]
+gradient = SubResource("Gradient_viq2h")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_whpw1"]
+_limits = [0.0, 1024.0, 0.0, 1.0]
+_data = [Vector2(0, 102.4), 0.0, 0.0, 0, 0]
+point_count = 1
+metadata/_snap_enabled = true
+
+[sub_resource type="CurveTexture" id="CurveTexture_gaq67"]
+curve = SubResource("Curve_whpw1")
+
+[sub_resource type="Curve" id="Curve_n55tk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qwiby"]
+curve = SubResource("Curve_n55tk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cam86"]
+lifetime_randomness = 0.2
+emission_shape_offset = Vector3(0, -1, 0)
+emission_shape_scale = Vector3(0.4, 0.4, 0.4)
+emission_shape = 1
+emission_sphere_radius = 1.0
+angular_velocity_min = 30.0
+angular_velocity_max = 60.0
+gravity = Vector3(-3, 2, -3)
+scale_min = 0.1
+scale_max = 0.3
+scale_curve = SubResource("CurveTexture_qwiby")
+color = Color(0.597916, 0.802007, 1, 1)
+color_ramp = SubResource("GradientTexture1D_p32id")
+alpha_curve = SubResource("CurveTexture_qgpte")
+emission_curve = SubResource("CurveTexture_gaq67")
+turbulence_enabled = true
+turbulence_noise_scale = 5.0
+collision_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvgcl"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_vjoxo")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_fjdoo"]
+lightmap_size_hint = Vector2i(7, 7)
+material = SubResource("StandardMaterial3D_hvgcl")
+
+[node name="InteractParticles" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+amount = 20
+speed_scale = 0.5
+randomness = 0.5
+visibility_aabb = AABB(-4, -4, -4, 8, 4, 8)
+process_material = SubResource("ParticleProcessMaterial_cam86")
+draw_pass_1 = SubResource("QuadMesh_fjdoo")
