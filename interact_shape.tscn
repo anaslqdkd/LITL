@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl1duqsdt4qdu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rq7o7"]
+
+[node name="Area3D" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_rq7o7")
+
+[node name="Prompt" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -22.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 32
+text = "promp gaga"
+horizontal_alignment = 1

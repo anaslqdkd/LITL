@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cppmt67107wl7"]
+
+[node name="InteractShape" type="Node3D"]
