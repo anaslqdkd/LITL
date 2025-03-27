@@ -7,6 +7,7 @@ var current_page: int = 0
 @onready var left_page_text = $leftPageLabel
 @onready var prev_button = $ButtonPrev
 @onready var next_button = $ButtonNext
+@onready var turn_page_sound = $AudioStreamPlayer
 
 var direction_right: bool = true
 var note_instance = null
@@ -29,6 +30,7 @@ var forward_animations = [
 
 var page_contents: Array
 signal page_changed
+signal page_turned
 
 func _load_books_data():
 	var books_string = FileAccess.get_file_as_string("res://src/levels/data/books_data.json") 
@@ -45,6 +47,7 @@ func _ready() -> void:
 	_load_books_data()
 	book_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	connect("page_changed", Callable(self, "_on_page_changed"))
+	connect("page_turned", Callable(self, "_on_page_turned"))
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -80,6 +83,7 @@ func _play_animation():
 			book_sprite.play_backwards(forward_animations[6]) 
 		elif current_page >= 2 and current_page <= pages_number - 2:
 			book_sprite.play_backwards(forward_animations[2])
+	emit_signal("page_turned")
 
 func _on_button_next_pressed() -> void:
 	if self.current_page == 2:
@@ -106,3 +110,7 @@ func _on_animation_finished():
 func _update_buttons():
 	if current_page == 0:
 		prev_button.visible = false
+
+func _on_page_turned():
+	pass
+	# turn_page_sound.play()

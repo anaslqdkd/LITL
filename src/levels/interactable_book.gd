@@ -21,4 +21,5 @@ func _on_interacted() -> void:
 	if player.has_item(key_item):
 		return
 	else:
+		NotificationPanel.send_notification("Tip: you can click on an item to acquire it")
 		add_child(key_instance)

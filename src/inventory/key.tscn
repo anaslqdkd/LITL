@@ -12,5 +12,15 @@ position = Vector2(176, 169)
 texture = ExtResource("2_ecyc8")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(176, 169)
 polygon = PackedVector2Array(14, -160, -14, -160, -14, -158.4, -19, -156.4, -19, 12, -26.7, 18, -29, 18, -29, 31, -21.3, 36.3, -28, 46, -35.8, 46, -39, 49.2, -39, 51, -40.9, 51, -56.9, 68, -59, 68, -59, 76.6, -64, 78.6, -64, 131.4, -59, 133.3, -59, 140.9, -39, 157.9, -39, 160, 39, 160, 39, 159, 40.9, 159, 56.9, 142, 59, 142, 59, 133.2, 61.5, 132, 64, 132, 64, 78.6, 59, 76.6, 59, 69.2, 55.8, 66, 52.9, 66, 35.9, 46, 28, 46, 21.4, 36.6, 26.7, 32, 29, 32, 29, 19, 19, 12, 19, -46, 50.9, -46, 56.9, -53, 59, -53, 59, -65.8, 55.8, -69, 53.4, -69, 51.4, -74, 49, -74, 49, -82.1, 56.7, -88, 59, -88, 59, -96, 49, -103, 49, -111, 50.8, -111, 54, -114.2, 54, -116.7, 59, -118.6, 59, -130.8, 55.8, -134, 53.4, -134, 51.4, -139, 19, -139, 19, -156.4, 14, -158.4)
+
+[node name="Shadow_sprite" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.912693, 0.630206, 0.523831, 1)
+position = Vector2(176, 170)
+texture = ExtResource("2_ecyc8")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

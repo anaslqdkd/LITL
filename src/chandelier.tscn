@@ -11,7 +11,7 @@ mesh = ExtResource("1_jsfds")
 [node name="OmniLight3D4" type="OmniLight3D" parent="."]
 transform = Transform3D(0.707107, -1.28028e-08, 0.707107, -0.707107, -3.09086e-08, 0.707107, 1.28028e-08, -1, -3.09086e-08, 0, 0.124791, 0)
 light_color = Color(0.930972, 0.532809, 0.377421, 1)
-light_energy = 4.0
+light_energy = 1.451
 light_volumetric_fog_energy = 2.0
 light_specular = 1.0
 shadow_enabled = true
@@ -19,4 +19,4 @@ shadow_opacity = 0.8
 shadow_blur = 4.0
 distance_fade_begin = 0.0
 distance_fade_shadow = 211.26
-omni_range = 38.6595
+omni_range = 12.046
