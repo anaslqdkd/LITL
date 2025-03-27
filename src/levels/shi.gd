@@ -9,7 +9,7 @@ func _on_interacted() -> void:
 
 	paper_instance = paper_scene.instantiate()
 	if paper_instance.has_method("_ready") and "note" in paper_instance:
-		paper_instance.note = "ten_soldiers" 
+		paper_instance.note = "shi" 
 	else:
 		print("Error: 'note' property not found in paper_instance")
 	

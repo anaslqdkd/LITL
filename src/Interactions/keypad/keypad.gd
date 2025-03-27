@@ -3,7 +3,7 @@ extends Control
 
 @onready var grid_container = $numbers
 @onready var code_label = $codeLabel
-var correct_password = "1234"
+var correct_password = "5"
 var password = ""
 
 signal on_keypad_press
@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 
 
 func on_button_interact(value):
-	if value in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]:
+	if value in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"] and len(password) < 4:
 		password += str(value)
 		code_label.text += str(value)
 	if value == "non":
