@@ -230,22 +230,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Chandelier" parent="Lights/Line" instance=ExtResource("5_8fnjk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, -5)
 
-[node name="Chandelier2" parent="Lights/Line" instance=ExtResource("5_8fnjk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, 0)
-
 [node name="Chandelier3" parent="Lights/Line" instance=ExtResource("5_8fnjk")]
-transform = Transform3D(0.755451, 0, 0, 0, 0.755451, 0, 0, 0, 0.755451, 5, 4, 5)
-
-[node name="Line2" type="Node3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 0)
-
-[node name="Chandelier" parent="Lights/Line2" instance=ExtResource("5_8fnjk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, -5)
-
-[node name="Chandelier2" parent="Lights/Line2" instance=ExtResource("5_8fnjk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, 0)
-
-[node name="Chandelier3" parent="Lights/Line2" instance=ExtResource("5_8fnjk")]
 transform = Transform3D(0.755451, 0, 0, 0, 0.755451, 0, 0, 0, 0.755451, 5, 4, 5)
 
 [node name="Line3" type="Node3D" parent="Lights"]
@@ -253,9 +238,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 0)
 
 [node name="Chandelier" parent="Lights/Line3" instance=ExtResource("5_8fnjk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, -5)
-
-[node name="Chandelier2" parent="Lights/Line3" instance=ExtResource("5_8fnjk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, 0)
 
 [node name="Chandelier3" parent="Lights/Line3" instance=ExtResource("5_8fnjk")]
 transform = Transform3D(0.755451, 0, 0, 0, 0.755451, 0, 0, 0, 0.755451, 5, 4, 5)
@@ -367,7 +349,7 @@ stream = ExtResource("16_jdd1v")
 stream = ExtResource("17_0r02l")
 
 [node name="Book" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -7.26459, 1.07445, 3.63656)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.98805, 1.95597, 3.63656)
 mesh = ExtResource("18_7tqwt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Book"]
@@ -377,7 +359,7 @@ script = ExtResource("19_vjenb")
 shape = SubResource("ConvexPolygonShape3D_10xre")
 
 [node name="Code_Book" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.60188, 1.07445, 3.85229)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.52569, 2.00802, 3.85229)
 mesh = ExtResource("18_7tqwt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Code_Book"]
@@ -387,7 +369,7 @@ script = ExtResource("20_vjenb")
 shape = SubResource("ConvexPolygonShape3D_10xre")
 
 [node name="Note_Book" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.47265, 1.13743, 3.85229)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.38983, 2.01659, 3.31125)
 mesh = ExtResource("18_7tqwt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Note_Book"]
