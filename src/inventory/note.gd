@@ -13,5 +13,5 @@ func _on_sprite_clicked():
 	player = current_scene.get_node_or_null("Player")
 	var note = preload("res://src/inventory/items/note.tres")
 	player.collect(note)
-	NotificationPanel.send_notification("magnifying glass added to the inventory")
+	NotificationPanel.send_notification("the note was added to the inventory")
 	queue_free()

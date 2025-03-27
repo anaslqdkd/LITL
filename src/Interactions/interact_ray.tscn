@@ -1,22 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://1nnhibxigbnv"]
+[gd_scene load_steps=3 format=3 uid="uid://1nnhibxigbnv"]
 
 [ext_resource type="Script" uid="uid://cm1nxq3tu242c" path="res://src/Interactions/interact_ray.gd" id="1_0t4ei"]
+[ext_resource type="FontFile" uid="uid://gj72ctbc4lfd" path="res://assets/fonts/ttf/DejaVuSansCondensed-Bold.ttf" id="2_jvlqb"]
 
 [node name="InteractRay" type="RayCast3D"]
 target_position = Vector3(0, 0, -4)
 script = ExtResource("1_0t4ei")
 
 [node name="Prompt" type="Label" parent="."]
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -22.5
-offset_bottom = 22.5
+anchors_preset = -1
+anchor_left = 0.00125
+anchor_top = 0.313333
+anchor_right = 1.00125
+anchor_bottom = 0.376667
 grow_horizontal = 2
-grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 32
-text = "promp gaga"
+theme_override_fonts/font = ExtResource("2_jvlqb")
+theme_override_font_sizes/font_size = 18
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

@@ -6,8 +6,7 @@ const menu_scene = preload("res://src/main_menu.tscn")
 
 var level_tag = "library"
 var is_interacting: bool 
-
-
+var is_in_inventory: bool
 func _ready() -> void:
 	pass
 
@@ -21,7 +20,7 @@ func _input(event):
 
 	if event.is_action_pressed("ui_text_delete"): ### Suppr pour afficher le dialogue
 		_load_dialog_box()
-	if event.is_action_pressed("ui_cancel") and not is_interacting: 
+	if event.is_action_pressed("ui_cancel") and not is_interacting and not is_in_inventory: 
 		open_menu()
 
 

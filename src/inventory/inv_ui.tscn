@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://8kuifhgugtga"]
+[gd_scene load_steps=5 format=3 uid="uid://8kuifhgugtga"]
 
 [ext_resource type="Script" uid="uid://r7w7o7en62y3" path="res://src/inventory/inv_ui.gd" id="1_d8tv2"]
 [ext_resource type="Texture2D" uid="uid://dqxcb14h7angp" path="res://assets/sprites/inventory-background.png" id="2_7v34r"]
 [ext_resource type="PackedScene" uid="uid://dktswplvv18f8" path="res://src/inventory/inv_ui_slot.tscn" id="3_dqxsg"]
+[ext_resource type="AudioStream" uid="uid://chkjur7uxxuxl" path="res://assets/sounds/inventory_selection.mp3" id="4_k6sra"]
 
 [node name="Inv_UI" type="Control"]
 custom_minimum_size = Vector2(84, 84)
@@ -60,3 +61,6 @@ layout_mode = 2
 
 [node name="inv_UI_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_dqxsg")]
 layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_k6sra")
