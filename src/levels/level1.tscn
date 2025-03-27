@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://d3xvo57cm6c1i" path="res://src/chandelier.tscn" id="15_f2nd4"]
 [ext_resource type="ArrayMesh" uid="uid://cnbl5h7ohrk8r" path="res://assets/meshes/book1.obj" id="15_i7d8c"]
 [ext_resource type="ArrayMesh" uid="uid://d0b0psexgtgca" path="res://assets/meshes/paper_note.obj" id="15_x1osm"]
-[ext_resource type="Script" path="res://src/levels/a_bee.gd" id="18_i7d8c"]
+[ext_resource type="Script" uid="uid://cpk68qwyv3pj" path="res://src/levels/a_bee.gd" id="18_i7d8c"]
 
 [sub_resource type="Animation" id="Animation_qgpte"]
 resource_name = "Opening_Cutscene"
