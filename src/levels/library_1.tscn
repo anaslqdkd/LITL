@@ -349,7 +349,7 @@ stream = ExtResource("16_jdd1v")
 stream = ExtResource("17_0r02l")
 
 [node name="Book" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.98805, 1.95597, 3.63656)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.98805, 1.23553, 3.63656)
 mesh = ExtResource("18_7tqwt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Book"]
@@ -359,7 +359,7 @@ script = ExtResource("19_vjenb")
 shape = SubResource("ConvexPolygonShape3D_10xre")
 
 [node name="Code_Book" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.52569, 2.00802, 3.85229)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.52569, 1.66182, 3.85229)
 mesh = ExtResource("18_7tqwt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Code_Book"]
@@ -369,7 +369,7 @@ script = ExtResource("20_vjenb")
 shape = SubResource("ConvexPolygonShape3D_10xre")
 
 [node name="Note_Book" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.38983, 2.01659, 3.31125)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.38983, 1.39702, 3.31125)
 mesh = ExtResource("18_7tqwt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Note_Book"]

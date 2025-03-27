@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b513b774chhig"]
 
-[ext_resource type="Script" uid="uid://n031lyxve4tc" path="res://src/levels/paper_scene.gd" id="1_8vvf1"]
+[ext_resource type="Script" path="res://src/levels/paper_scene.gd" id="1_8vvf1"]
 [ext_resource type="Texture2D" uid="uid://deoh628qn5fd" path="res://assets/images/paper.png" id="2_8vvf1"]
 [ext_resource type="FontFile" uid="uid://cmmjcpix7aa0s" path="res://assets/fonts/JMH Typewriter.ttf" id="3_wk4kf"]
 
@@ -17,15 +17,16 @@ script = ExtResource("1_8vvf1")
 
 [node name="PaperSprite" type="Sprite2D" parent="."]
 position = Vector2(36, -7)
-scale = Vector2(18, 18)
+scale = Vector2(12.9897, 12.3094)
 texture = ExtResource("2_8vvf1")
 
 [node name="TextLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = -359.0
-offset_top = -265.0
-offset_right = 441.0
-offset_bottom = 225.0
+offset_left = -220.0
+offset_top = -168.0
+offset_right = 580.0
+offset_bottom = 322.0
+scale = Vector2(0.68, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_wk4kf")
 theme_override_font_sizes/font_size = 15

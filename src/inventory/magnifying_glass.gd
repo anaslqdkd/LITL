@@ -26,16 +26,27 @@ func _ready() -> void:
 
 
 func _process(delta):
+	# TODO: à continuer
 	if dragging:
 		var mousepos = get_viewport().get_mouse_position()
 		self.position = Vector2(mousepos.x, mousepos.y)
 	overlapping_areas = get_overlapping_areas()
+	# for area in overlapping_areas:
+	# 	if area.name == "Note":
+	# 		var paper_scene = load("res://src/levels/paper_scene.tscn")  
+	# 		var paper_instance = paper_scene.instantiate()
+	# 		paper_instance.note = "note" 
+	# 		add_child(paper_instance)
+	# if Input.is_action_just_pressed("mouse_left_click"):
+	# var overlapping_areas = get_overlapping_areas()
+	
 	for area in overlapping_areas:
 		if area.name == "Note":
-			# TODO: à mettre la bonne scène à afficher
-			var key_scene = load("res://src/inventory/key.tscn")  
-			var key_instance = key_scene.instantiate()
-			add_child(key_instance)
+			var paper_scene = load("res://src/levels/paper_scene.tscn")  
+			var paper_instance = paper_scene.instantiate()
+			paper_instance.note = "note"
+			if Input.is_action_just_pressed("mouse_click_left"):
+				add_child(paper_instance)
 
 
 
