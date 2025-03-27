@@ -65,7 +65,7 @@ func has_item(item) -> bool:
 func _process(delta: float) -> void:
 	var current_scene = get_tree().current_scene
 	var player = current_scene.get_node_or_null("Player")
-	if current_scene.is_interacting:
+	if current_scene.is_interacting or current_scene.is_in_inventory:
 		player.can_move = false
 	else:
 		player.can_move = true

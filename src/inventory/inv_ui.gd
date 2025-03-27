@@ -37,9 +37,9 @@ func update_slots():
 
 func _process(delta: float) -> void:
 	if is_focused:
-		current_scene.is_interacting = true
+		current_scene.is_in_inventory = true
 	if !is_focused:
-		current_scene.is_interacting = false
+		current_scene.is_in_inventory = false
 	if Input.is_action_just_pressed("i"):
 		is_focused = !is_focused
 	if is_open and is_focused:
