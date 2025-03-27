@@ -7,6 +7,8 @@ extends Control
 var selected_index = 0
 var selected_slot = null
 
+var current_scene = null
+
 var key_instance: Area2D
 var key_scene = preload("res://src/inventory/key.tscn")  
 var note_instance: Area2D
@@ -15,8 +17,10 @@ var magnifying_glass_instance: Area2D
 var magnifying_glass_scene = preload("res://src/inventory/magnifying_glass.tscn")  
 
 var is_open = false
+var is_focused = false
 
 func _ready() -> void:
+	current_scene = get_tree().current_scene
 	inv.update.connect(update_slots)
 	update_slots()
 	# close() 
@@ -32,8 +36,13 @@ func update_slots():
 			slots[i].modulate = Color(1, 1, 1)
 
 func _process(delta: float) -> void:
-	# if Input.is_action_just_pressed("i"):
-	if is_open:
+	if is_focused:
+		current_scene.is_interacting = true
+	if !is_focused:
+		current_scene.is_interacting = false
+	if Input.is_action_just_pressed("i"):
+		is_focused = !is_focused
+	if is_open and is_focused:
 		handle_navigation()
 		handle_selection()
 				# close()
@@ -51,11 +60,12 @@ func close():
 func handle_navigation():
 	if Input.is_action_just_pressed("move_right"):
 		item_selection_sound.play()
-		selected_index = (selected_index + 1)%inv.slots.size()
+		selected_index = (selected_index + 1)%inv.slots.size() 
+		print("the selected_index is after move right", selected_index)
 		update_slots()
 	if Input.is_action_just_pressed("move_left"):
 		item_selection_sound.play()
-		selected_index = (selected_index - 1)%inv.slots.size()
+		selected_index = (selected_index - 1 + inv.slots.size())%inv.slots.size()
 		update_slots()
 
 func handle_selection():

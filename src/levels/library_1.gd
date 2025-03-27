@@ -6,8 +6,6 @@ const menu_scene = preload("res://src/main_menu.tscn")
 
 var level_tag = "library"
 var is_interacting: bool 
-
-
 func _ready() -> void:
 	pass
 
