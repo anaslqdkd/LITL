@@ -533,7 +533,7 @@ script = ExtResource("1_onrkg")
 inv = ExtResource("2_pg28d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.297181, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.473985, 0)
 shape = SubResource("ConvexPolygonShape3D_lowyb")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]

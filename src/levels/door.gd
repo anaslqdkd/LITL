@@ -1,12 +1,10 @@
 extends Interactable
 
-
 var keypad_instance = null
 @export var item: InvItem
 
 var player = null
 var current_scene = null
-
 
 func _on_interacted() -> void:
 	current_scene = get_tree().current_scene
