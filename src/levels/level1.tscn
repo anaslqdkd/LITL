@@ -7,7 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://24or723yakdl" path="res://assets/meshes/door.obj" id="6_vm2gj"]
 [ext_resource type="Script" uid="uid://b350ud5guf1hk" path="res://src/levels/door.gd" id="7_ql4hq"]
 [ext_resource type="ArrayMesh" uid="uid://ct648e2rk8rrc" path="res://assets/meshes/lirbrary2.obj" id="7_tyup7"]
-[ext_resource type="Script" uid="uid://b1vxsaqekywqm" path="res://src/levels/switch.gd" id="8_bofii"]
+[ext_resource type="Script" path="res://src/levels/switch.gd" id="8_bofii"]
 [ext_resource type="Texture2D" uid="uid://db1eykhwu6ymw" path="res://assets/images/sixtine.jpg" id="11_i7d8c"]
 [ext_resource type="Texture2D" uid="uid://nea5g0oam3p3" path="res://assets/meshes/desk.png" id="12_hrlh0"]
 [ext_resource type="ArrayMesh" uid="uid://kfjl8e647atl" path="res://assets/meshes/desk.obj" id="13_1iyli"]
@@ -18,8 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://d3xvo57cm6c1i" path="res://src/chandelier.tscn" id="15_f2nd4"]
 [ext_resource type="ArrayMesh" uid="uid://cnbl5h7ohrk8r" path="res://assets/meshes/book1.obj" id="15_i7d8c"]
 [ext_resource type="ArrayMesh" uid="uid://d0b0psexgtgca" path="res://assets/meshes/paper_note.obj" id="15_x1osm"]
-[ext_resource type="Script" uid="uid://ccr7wjusrmett" path="res://src/levels/shi.gd" id="17_bofii"]
-[ext_resource type="Script" uid="uid://cpk68qwyv3pj" path="res://src/levels/a_bee.gd" id="18_i7d8c"]
+[ext_resource type="Script" path="res://src/levels/shi.gd" id="17_bofii"]
+[ext_resource type="Script" path="res://src/levels/a_bee.gd" id="18_i7d8c"]
 
 [sub_resource type="Animation" id="Animation_qgpte"]
 resource_name = "Opening_Cutscene"

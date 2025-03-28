@@ -15,6 +15,8 @@ var note_instance: Area2D
 var note_scene = preload("res://src/inventory/note.tscn")  
 var magnifying_glass_instance: Area2D
 var magnifying_glass_scene = preload("res://src/inventory/magnifying_glass.tscn")  
+var paper_note_instance = null
+var paper_scene = preload("res://src/levels/paper_scene.tscn")
 
 var is_open = false
 var is_focused = false
@@ -90,6 +92,14 @@ func use_item(slot):
 			if magnifying_glass_scene:
 				magnifying_glass_instance = magnifying_glass_scene.instantiate()
 				add_child(magnifying_glass_instance)
+		if slot.item.name == "paper_note":
+			print("here in slot name")
+			if paper_scene:
+				paper_note_instance = paper_scene.instantiate()
+				paper_note_instance.note = "note"
+				add_child(paper_note_instance)
+			else:
+				print("error")
 		else:
 			return
 	else:

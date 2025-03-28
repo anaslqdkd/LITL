@@ -1,4 +1,6 @@
 extends Control
+var current_scene = null
+var player = null
 
 @onready var text = $TextLabel
 
@@ -23,3 +25,11 @@ func _load_note():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		queue_free()
+
+func _on_sprite_clicked(): 
+	current_scene = get_tree().current_scene
+	player = current_scene.get_node_or_null("Player")
+	var paper_note = preload("res://src/inventory/items/paper_note.tres")
+	player.collect(paper_note)
+	NotificationPanel.send_notification("paper note added in the inventory")
+	queue_free()
