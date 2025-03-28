@@ -3,7 +3,7 @@ extends Control
 
 @onready var grid_container = $numbers
 @onready var code_label = $codeLabel
-var correct_password = "5"
+var correct_password = "85"
 var password = ""
 
 signal on_keypad_press
