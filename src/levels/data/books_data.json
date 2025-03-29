@@ -25,6 +25,7 @@
 	"terry": {
 		"pages": [
 			["", ""],
+			["", "\n\n\n\nTHE COLOUR OF MAGIC \n\nWritten by Terry Pratchet"],
 			["", "it has been remarked before that those who are sensitive to radiations in the far octarine – the eighth colour, the pigment of the imagination – can see thiNgs that others cannot. it had to be death. no-one else went around with empty eye sockets and, of course, the scythe over one shoUlder was another clue."],
 			[" as rincewind stared in horror a courting couple, laughing at soMe private joke, walked straight through the apparition without appearing to notice it. death, insofar as it was possiBle in a face with no movable features, looked surprised. \n RINCEWIND? dEath said, in tones as deep and heavy as the slamming of leaden doors,",
 			 "far underground. \n 'um,' said Rincewind, trying to back away from that eyeless stare. \n BUT WHY ARE YOU HERE? (boom, boom went crypt lIds, in the worm-haunted fastnesses under old mountains . . .) \n 'um, why not?' said rincewind. 'anyway, i'm sure you've got lots to do, so if you'll just—' "],
@@ -40,6 +41,7 @@
 	"a_bee": {
 		"pages": [
 			["", ""],
+			["","\n\n\n\nAND THERE WERE NONE \n\nWritten by Agatha Christie"],
 			["",
 			 " The meal was over. Mr Justice Wargrave cleared his throat. He said in a small authoritative voice: ‘It would be advisable, I think, if we met to discuss the situation. Shall we say in half an hour’s time in the drawing-room?’ Every one made a sound suggestive of agreement. Vera began to pile plates together. \n She said: ‘I’ll clear away and wash up.’"],
 			[" Philip Lombard said: ‘We’ll bring the stuff out to the pantry for you.’\n ‘Thanks.’ \n Emily Brent, rising to her feet sat down again. She said:  \n ‘Oh dear.’ The judge said:  \n ‘Anything the matter, Miss Brent?’  \n Emily said apologetically: ‘I’m sorry. I’d like to help Miss Claythorne, but I don’t know how it is.", 
@@ -60,7 +62,8 @@ window-pane. Vera Claythorne had talked about bees this morning. Bees and honey 
 		"pages": [
 			["", ""],
 			["",
-			 "Georges Perec\n A VOID (La disparition)\n Translated from the French\n by Gilbert Adair\n\n INTRODUCTION\n\n In which, as you will soon find out, Damnation has its origin. Today, by radio, and also on giant hoardings, a rabbi, an admiral notorious for his links to Masonry, "],
+			 "\n\n\n\nGeorges Perec\n A VOID (La disparition)\n Translated from the French\n by Gilbert Adair\n\n INTRODUCTION\n\n" ],
+			["","In which, as you will soon find out, Damnation has its origin. Today, by radio, and also on giant hoardings, a rabbi, an admiral notorious for his links to Masonry, "],
 			["a trio of cardinals, a trio, too, of insignificant politicians (bought and paid for by a rich and corrupt Anglo-Canadian banking corporation), inform us all ofhow our country now risks dying of starvation. A rumour, that's my initial thought as I switch off my radio, a rumour or possibly a hoax. Propaganda,", 
 			"I murmur anxiously — as though, just by saying so, I might allay my doubts — typical politicians' propaganda. But public opinion gradually absorbs it as a fact. Individuals start strutting around with stout clubs. \"Food, glorious food!\" is a common cry (occasionally sung to Bart's music),"],
 			["with ordinary hard-working folk harassing officials, both local and national, and cursing capitalists and captains of industry. Cops shrink from going out on night shift. In Macon a mob storms a municipal building. In Rocadamour ruffians rob a hangar full of foodstuffs, pillaging tons of tuna fish,",
@@ -68,6 +71,39 @@ window-pane. Vera Claythorne had talked about bees this morning. Bees and honey 
 			["and ransacks a local journal, a disgusting right-wing rag that is siding against it. Up and down this land of ours looting has brought docks, shops and farms to a virtual standstill.", 
 			""],
 			["",
+			 ""],
+			["", ""]
+		]
+	},
+	
+	"copperfield": {
+		"pages": [
+			["", ""],
+			["",
+			 "\n\n\n\nDAVID COPPERFIELD \n\n Written by Charles Dickens"],
+			["I murmur anxiously — as though, just by saying so, I might allay my doubts — typical politicians' propaganda. But public opinion gradually absorbs it as a fact. Individuals start strutting around with stout clubs. \"Food, glorious food!\" is a common cry (occasionally sung to Bart's music),",
+			"It was remarked that the clock began to strike, and I began to cry, simultaneously. In consideration of the day and hour of my birth, it was declared by the nurse, and by some sage women in the neighbourhood who had taken a lively interest in me several months before there was any possibility of"],
+			["our becoming personally acquainted, first, that I was destined to be unlucky in life; and secondly, that I was privileged to see ghosts and spirits; both these gifts inevitably attaching, as they believed, to all unlucky infants of either gender, born towards the small hours on a Friday night. I need say nothing here on the first head,",
+			"because nothing can show better than my history whether that prediction was verified or falsified by the result. On the second branch of the question, I will only remark, that unless I ran through that part of my inheritance while I was still a baby, I have not come into it yet. "], 
+			["But I do not at all complain of having been kept out of this property; and if any- body else should be in the present enjoyment of it, he is heartily welcome to keep it.",""],
+			["",
+			 ""],
+			["", ""]
+		]
+	},
+	
+	"crimes": {
+		"pages": [
+			["", ""],
+			["","\n\n\n\nCRIME AND PUNISHMENT \n\n Written by Dostoïevski"],
+			 ["","At first—long before indeed—he had been much occupied with one question; why almost all crimes are so badly concealed and so easily detected, and why almost all criminals leave such obvious traces? He had come gradually to many different and curious conclusions, and in his opinion "],
+			["the chief reason lay not so much in the material impossibility of concealing the crime, as in the criminal himself. Almost every criminal is subject to a failure of will and reasoning power by a childish and phenomenal heedlessness, at the very instant when prudence and caution are most essential. ", 
+			"I murmur anxiously — as though, just by saying so, I might allay my doubts — typical politicians' propaganda. But public opinion gradually absorbs it as a fact. Individuals start strutting around with stout clubs. \"Food, glorious food!\" is a common cry (occasionally sung to Bart's music),"],
+			["It was his conviction that this eclipse of reason and failure of will power attacked a man like a disease, developed gradually and reached its highest point just before the perpetration of the crime, continued with equal violence at the moment of the crime and for longer or shorter time",
+			 "after, according to the individual case, and then passed off like any other disease. The question whether the disease gives rise to the crime, or whether the crime from its own peculiar nature is always accompanied by something of the nature of disease, he did not yet feel able to decide."],
+			["When he reached these conclusions, he decided that in his own case there could not be such a morbid reaction, that his reason and will would remain unimpaired at the time of carrying out his design, for the simple reason that his design was ‘not a crime….’ We will omit all the process by means of", 
+			"which he arrived at this last conclusion; we have run too far ahead already…. We may add only that the practical, purely material difficulties of the affair occupied a secondary position in his mind. ‘One has but to keep all one’s will-power and reason to deal with them, and they will all be overcome"],
+			["at the time when once one has familiarised oneself with the minutest details of the business….’ But this preparation had never been begun. His final decisions were what he came to trust least, and when the hour struck, it all came to pass quite differently, as it were accidentally and unexpectedly.",
 			 ""],
 			["", ""]
 		]

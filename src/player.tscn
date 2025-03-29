@@ -551,7 +551,7 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_smeid")
 animation = &"idle_left"
 
-[node name="InteractRay" parent="." instance=ExtResource("3_bktlc")]
+[node name="InteractRayBack" parent="." instance=ExtResource("3_bktlc")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
 [node name="Inv_UI" parent="." instance=ExtResource("5_21lrq")]
@@ -564,3 +564,12 @@ fov = 90.0
 far = 100.0
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
+
+[node name="InteractRayRight" parent="." instance=ExtResource("3_bktlc")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 0, 0, 0)
+
+[node name="InteractRayLeft" parent="." instance=ExtResource("3_bktlc")]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, 0, 0, 0)
+
+[node name="InteractRayUnder" parent="." instance=ExtResource("3_bktlc")]
+transform = Transform3D(-0.5, -7.54979e-08, -3.30012e-15, 0, -2.18557e-08, 0.5, -7.54979e-08, 0.5, 2.18557e-08, 0, 0, 0)

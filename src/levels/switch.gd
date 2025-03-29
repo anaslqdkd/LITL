@@ -7,14 +7,14 @@ func _on_interacted() -> void:
 	if not light_node:
 		print("Error: 'Light' node not found!")
 		return
-	
+		
+	LightsState.toggle_lights()
 	for chandelier in light_node.get_children():
 		var light = chandelier.get_node_or_null("OmniLight3D")
-		if light.visible == true:
+		if LightsState.lights_off:
 			light.visible = false  
-			LightsState.lights_off = true
+			
 		else:
 			light.visible = true
-			LightsState.lights_off = false
 	
 	print("All chandelier lights turned off!")
