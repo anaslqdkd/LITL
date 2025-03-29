@@ -20,7 +20,6 @@ func _on_interacted() -> void:
 	print(book_instance)
 	book_instance.connect("page_changed", Callable(self, "_on_page_changed"))
 	book_instance.connect("page_changed_2", Callable(self, "_on_page_changed_2"))
-	book_instance.connect("page_changed_2", Callable(self, "_on_page_changed_2"))
 	book_instance.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	add_child(book_instance)
 	if player.has_item(note_item):
@@ -42,5 +41,5 @@ func _on_page_changed_2():
 
 func _on_animation_finished():
 	if note_instance:
-		add_child(note_instance)
+		current_scene.add_child(note_instance)
 	return

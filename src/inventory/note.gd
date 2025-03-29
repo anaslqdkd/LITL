@@ -28,6 +28,11 @@ func _process(delta: float) -> void:
 	player = current_scene.get_node_or_null("Player")
 	if player.has_item(note):
 		can_click = false
+		pass
+	var overlapping_areas = get_overlapping_areas()
+	for area in overlapping_areas:
+		if area.name == "Magnifying_glass" and Input.is_action_just_pressed("mouse_click_left"):
+			queue_free()
 
 func _input(event):
 	# TODO: à voir si je fais la même chose pour les autres 

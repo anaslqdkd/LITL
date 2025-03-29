@@ -15,7 +15,7 @@ var note_instance
 var note_scene = preload("res://src/inventory/note.tscn")
 var can_click: bool = true
 var magn_glass = preload("res://src/inventory/items/magnifying_glass.tres")
-signal paper_note
+var paper_note_item = preload("res://src/inventory/items/paper_note.tres")
 
 
 var overlapping_areas
@@ -26,7 +26,6 @@ func _ready() -> void:
 	# note_instance = note_scene.instantiate()
 	shadow_sprite.visible = false
 	connect("dragsignal", Callable(self, "_set_drag_pc"))
-	connect("paper_note", Callable(self, "_on_paper_note"))
 	# connect("papernote", Callable(self, "_set_drag_pc"))
 	# note_scene = load("res://src/inventory/note.tscn")  
 	paper_scene = load("res://src/levels/paper_scene.tscn")  
@@ -36,33 +35,29 @@ func _ready() -> void:
 
 func _process(delta):
 	# TODO: à continuer
-	if dragging:
-		var mousepos = get_viewport().get_mouse_position()
-		self.position = Vector2(mousepos.x, mousepos.y)
-	overlapping_areas = get_overlapping_areas()
-	
-	for area in overlapping_areas:
-		if area.name == "Note":
-			var paper_note_item = load("res://src/inventory/items/paper_note.tres")
-			paper_instance.note = "note"
-			paper_note.emit()
-			emit_signal("paper_note")
-			if Input.is_action_just_pressed("mouse_click_left") and not player.has_item(paper_note_item):
-				# add_child(paper_instance)
-				current_scene.add_child(paper_instance)
-				# paper_note.emit()
-				# emit_signal("paper_note")
-				# TODO: texture à changer dans l'inventaire pour la paper note
-				player.collect(paper_note_item)
-				# paper_instance.queue_free()
-
-				# note_instance.kill()
-				queue_free()
 	current_scene = get_tree().current_scene
 	player = current_scene.get_node_or_null("Player")
 	if player.has_item(magn_glass):
-		can_click = false
-	
+		if dragging:
+			var mousepos = get_viewport().get_mouse_position()
+			self.position = Vector2(mousepos.x, mousepos.y)
+		overlapping_areas = get_overlapping_areas()
+		
+		for area in overlapping_areas:
+			if area.name == "Note":
+				paper_instance.note = "note"
+				if Input.is_action_just_pressed("mouse_click_left") and not player.has_item(paper_note_item):
+					current_scene.add_child(paper_instance)
+					# paper_instance.queue_free()
+
+					# note_instance.kill()
+					queue_free()
+		if player.has_item(magn_glass):
+			can_click = false
+	else:
+		if Input.is_action_just_pressed("mouse_click_left"):
+			_on_sprite_clicked()
+		
 
 
 
@@ -81,11 +76,10 @@ func _set_drag_pc():
 	dragging=!dragging
 
 func _on_sprite_clicked(): 
-	var magnifying_glass = preload("res://src/inventory/items/magnifying_glass.tres")
-	if not player.has_item(magnifying_glass):
+	if not player.has_item(magn_glass):
 		current_scene = get_tree().current_scene
 		player = current_scene.get_node_or_null("Player")
-		player.collect(magnifying_glass)
+		player.collect(magn_glass)
 		NotificationPanel.send_notification("magnifying glass added to the inventory")
 		queue_free()
 
@@ -96,5 +90,6 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	shadow_sprite.visible = false
 
-# func _on_paper_note() -> void:
-# 	pass
+func _on_note() -> void:
+	print("in on note")
+	pass
