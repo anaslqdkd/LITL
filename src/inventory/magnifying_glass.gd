@@ -17,11 +17,6 @@ var can_click: bool = true
 var magn_glass = preload("res://src/inventory/items/magnifying_glass.tres")
 signal paper_note
 
-# func _input_event(viewport, event, shape_idx) -> void:
-# 	if event is InputEventMouseButton: 
-# 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed: 
-# 			if can_click:
-# 				_on_sprite_clicked()
 
 var overlapping_areas
 var paper_scene
@@ -45,14 +40,6 @@ func _process(delta):
 		var mousepos = get_viewport().get_mouse_position()
 		self.position = Vector2(mousepos.x, mousepos.y)
 	overlapping_areas = get_overlapping_areas()
-	# for area in overlapping_areas:
-	# 	if area.name == "Note":
-	# 		var paper_scene = load("res://src/levels/paper_scene.tscn")  
-	# 		var paper_instance = paper_scene.instantiate()
-	# 		paper_instance.note = "note" 
-	# 		add_child(paper_instance)
-	# if Input.is_action_just_pressed("mouse_left_click"):
-	# var overlapping_areas = get_overlapping_areas()
 	
 	for area in overlapping_areas:
 		if area.name == "Note":
@@ -71,7 +58,6 @@ func _process(delta):
 
 				# note_instance.kill()
 				queue_free()
-				# FIXME: player.collect(paper_instance)
 	current_scene = get_tree().current_scene
 	player = current_scene.get_node_or_null("Player")
 	if player.has_item(magn_glass):

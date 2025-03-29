@@ -59,3 +59,4 @@ func _display_letter():
 
 func _on_timer_timeout() -> void:
 	_display_letter()
+

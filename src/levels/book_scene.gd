@@ -31,6 +31,8 @@ var forward_animations = [
 var page_contents: Array
 signal page_changed
 signal page_turned
+signal page_changed_2
+signal animation_finished
 
 func _load_books_data():
 	var books_string = FileAccess.get_file_as_string("res://src/levels/data/books_data.json") 
@@ -48,10 +50,17 @@ func _ready() -> void:
 	book_sprite.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	connect("page_changed", Callable(self, "_on_page_changed"))
 	connect("page_turned", Callable(self, "_on_page_turned"))
+	connect("page_changed_2", Callable(self, "_on_page_changed_2"))
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		queue_free()
+	if self.current_page == 2:
+		emit_signal("page_changed")
+		page_changed.emit()
+	if self.current_page != 2:
+		emit_signal("page_changed_2")
+		page_changed_2.emit()
 
 
 func _clear_pages():
@@ -86,9 +95,7 @@ func _play_animation():
 	emit_signal("page_turned")
 
 func _on_button_next_pressed() -> void:
-	if self.current_page == 2:
-		emit_signal("page_changed")
-		page_changed.emit()
+
 	if self.current_page >= pages_number:
 		self.current_page = 0
 	self.direction_right = true
@@ -101,6 +108,8 @@ func _on_button_prev_pressed() -> void:
 	_play_animation()
 
 func _on_animation_finished():
+	emit_signal("animation_finished")
+	animation_finished.emit()
 	right_page_text.text = page_contents[current_page][1]
 	left_page_text.text = page_contents[current_page][0]
 	right_page_text.visible = true
