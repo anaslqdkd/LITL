@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://chmdec0eswtq6"]
+[gd_scene load_steps=77 format=3 uid="uid://chmdec0eswtq6"]
 
 [ext_resource type="Script" uid="uid://brbduipiys671" path="res://src/player.gd" id="1_onrkg"]
 [ext_resource type="Resource" uid="uid://dnqamw5bdhdv0" path="res://src/inventory/playerinv.tres" id="2_pg28d"]
@@ -528,6 +528,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_pg28d"]
+exposure_multiplier = 1.2
+dof_blur_far_enabled = true
+dof_blur_far_distance = 12.0
+dof_blur_near_enabled = true
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_onrkg")
 inv = ExtResource("2_pg28d")
@@ -546,5 +552,15 @@ sprite_frames = SubResource("SpriteFrames_smeid")
 animation = &"idle_left"
 
 [node name="InteractRay" parent="." instance=ExtResource("3_bktlc")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
 [node name="Inv_UI" parent="." instance=ExtResource("5_21lrq")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2.5, 4)
+keep_aspect = 0
+attributes = SubResource("CameraAttributesPractical_pg28d")
+fov = 90.0
+far = 100.0
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
