@@ -17,8 +17,7 @@
 	\n Tetraphobia is known to occur in Korea and Japan since the two words sound identical, but not at all in Vietnam because they carry different tones (in the case of the word for \"four\", whether it is the Sino-Vietnamese reading tứ or the more common non-Sino-Vietnamese reading tư, neither sounds like the word for \"death\" which is tử) and Vietnamese nor use Sino-Vietnamese numerals as often in the first place.
 	\n Tetraphobia far surpasses triskaidekaphobia (Western superstitions around the number 13). It even permeates the business world in these regions of Asia.
 	\n In Japan, the number 4 is avoided in some apartments and hospitals. The number 49 is also considered unlucky, as its pronunciation is similar to the Japanese term shiku, meaning 'to suffer and die'."
-	],
-	
+	],	
 	"empty_set": [
 	"In mathematics, the empty set or void set is the unique set having no elements; its size or cardinality (count of elements in a set) is zero.[1] Some axiomatic set theories ensure that the empty set exists by including an axiom of empty set, while in other theories, its existence can be deduced. Many possible properties of sets are vacuously true for the empty set. 
 \n Any set other than the empty set is called non-empty.
@@ -31,5 +30,7 @@
 	"A lipogram (from Ancient Greek: λειπογράμματος, leipográmmatos, \"leaving out a letter\" is a kind of constrained writing or word game consisting of writing paragraphs or longer works in which a particular letter or group of letters is avoided. Extended Ancient Greek texts avoiding the letter sigma are the earliest examples of lipograms.\n\n
 Writing a lipogram may be a trivial task when avoiding uncommon letters like Z, J, Q, or X, but it is much more challenging to avoid common letters like E, T, or A in the English language, as the author must omit many ordinary words.\n\n Grammatically meaningful and smooth-flowing lipograms can be difficult to compose. Identifying lipograms can also be problematic, as there is always the possibility that a given piece of writing in any language may be unintentionally lipogrammatic. For example, Poe's poem The Raven contains no Z, but there is no evidence that this was intentional. \n\n
 A pangrammatic lipogram is a text that uses every letter of the alphabet except one. For example, \"The quick brown fox jumped over the lazy dog\" omits the letter S, which the usual pangram includes by using the word jumps."
-	]
+	],
+	"note": ["It should say something interesting"]
+
 }

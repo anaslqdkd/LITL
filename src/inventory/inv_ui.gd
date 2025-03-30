@@ -15,6 +15,8 @@ var note_instance: Area2D
 var note_scene = preload("res://src/inventory/note.tscn")  
 var magnifying_glass_instance: Area2D
 var magnifying_glass_scene = preload("res://src/inventory/magnifying_glass.tscn")  
+var paper_note_instance = null
+var paper_scene = preload("res://src/levels/paper_scene.tscn")
 
 var is_open = false
 var is_focused = false
@@ -55,12 +57,13 @@ func close():
 
 func handle_navigation():
 	if Input.is_action_just_pressed("move_right"):
-		item_selection_sound.play()
-		selected_index = (selected_index + 1) % inv.slots.size() 
+		# item_selection_sound.play()
+		selected_index = (selected_index + 1)%inv.slots.size() 
+		print("the selected_index is after move right", selected_index)
 		update_slots()
 	if Input.is_action_just_pressed("move_left"):
-		item_selection_sound.play()
-		selected_index = (selected_index - 1 + inv.slots.size()) % inv.slots.size()
+		# item_selection_sound.play()
+		selected_index = (selected_index - 1 + inv.slots.size())%inv.slots.size()
 		update_slots()
 
 func handle_selection():
@@ -70,16 +73,27 @@ func handle_selection():
 
 func use_item(slot):
 	if slot.item:
-		match slot.item.name:
-			"key":
-				if key_scene:
-					key_instance = key_scene.instantiate()
-					add_child(key_instance)
-			"note":
-				if note_scene:
-					note_instance = note_scene.instantiate()
-					add_child(note_instance)
-			"magnifying_glass":
-				if magnifying_glass_scene:
-					magnifying_glass_instance = magnifying_glass_scene.instantiate()
-					add_child(magnifying_glass_instance)
+		if slot.item.name == "key":
+			if key_scene:
+				key_instance = key_scene.instantiate()
+				add_child(key_instance)
+		if slot.item.name == "note":
+			if note_scene:
+				note_instance = note_scene.instantiate()
+				add_child(note_instance)
+		if slot.item.name == "magnifying_glass":
+			if magnifying_glass_scene:
+				magnifying_glass_instance = magnifying_glass_scene.instantiate()
+				add_child(magnifying_glass_instance)
+		if slot.item.name == "paper_note":
+			print("here in slot name")
+			if paper_scene:
+				paper_note_instance = paper_scene.instantiate()
+				paper_note_instance.note = "note"
+				add_child(paper_note_instance)
+			else:
+				print("error")
+		else:
+			return
+	else:
+		return

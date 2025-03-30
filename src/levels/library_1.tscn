@@ -1,10 +1,11 @@
-[gd_scene load_steps=41 format=3 uid="uid://b7wwchqv7bfsc"]
+[gd_scene load_steps=49 format=3 uid="uid://b7wwchqv7bfsc"]
 
 [ext_resource type="Script" uid="uid://c1vd7bdrncvh1" path="res://src/levels/library_1.gd" id="1_cbera"]
 [ext_resource type="PackedScene" uid="uid://chmdec0eswtq6" path="res://src/player.tscn" id="2_odxcg"]
 [ext_resource type="Texture2D" uid="uid://byju8x4pf7533" path="res://assets/particles/circle_05.png" id="4_01hco"]
 [ext_resource type="PackedScene" uid="uid://d3xvo57cm6c1i" path="res://src/chandelier.tscn" id="5_8fnjk"]
 [ext_resource type="MeshLibrary" uid="uid://cq6usy1jsasv2" path="res://new_mesh_library.tres" id="6_ep3ay"]
+[ext_resource type="Script" uid="uid://dcewra1nlpb7a" path="res://src/levels/scrollable_wall.gd" id="6_vjenb"]
 [ext_resource type="Script" uid="uid://b350ud5guf1hk" path="res://src/levels/door.gd" id="7_cbera"]
 [ext_resource type="ArrayMesh" uid="uid://24or723yakdl" path="res://assets/meshes/door.obj" id="7_mihkl"]
 [ext_resource type="Resource" uid="uid://cpgkcgndx5xvg" path="res://src/inventory/items/explosion.tres" id="8_01hco"]
@@ -15,9 +16,13 @@
 [ext_resource type="AudioStream" uid="uid://cgvf1hn27waei" path="res://assets/sounds/item_sound.mp3" id="17_0r02l"]
 [ext_resource type="ArrayMesh" uid="uid://ct648e2rk8rrc" path="res://assets/meshes/lirbrary2.obj" id="18_7tqwt"]
 [ext_resource type="PackedScene" uid="uid://bigaxgh24r3mh" path="res://src/levels/chest_anim.tscn" id="18_ildo7"]
+[ext_resource type="Script" uid="uid://cmtssn4p2dbo" path="res://src/levels/button_door.gd" id="19_7tqwt"]
 [ext_resource type="Script" uid="uid://b88wgx0bfljdi" path="res://src/levels/interactable_book.gd" id="19_vjenb"]
 [ext_resource type="Script" uid="uid://cowtju2b1348d" path="res://src/levels/code_book.gd" id="20_vjenb"]
 [ext_resource type="Script" uid="uid://de5ys5haoxi42" path="res://src/levels/note_book.gd" id="21_10xre"]
+[ext_resource type="Script" uid="uid://l0dxlorq23m6" path="res://src/levels/watch_mesh.gd" id="22_p4tum"]
+[ext_resource type="ArrayMesh" uid="uid://bqekmb33146ub" path="res://assets/meshes/Clock_Constraints_for_Animations/Clock_obj.obj" id="22_prwdb"]
+[ext_resource type="Script" uid="uid://0rgfo7upvqqh" path="res://src/levels/interactive_watch.gd" id="23_p4tum"]
 
 [sub_resource type="Animation" id="Animation_qgpte"]
 resource_name = "Opening_Cutscene"
@@ -184,6 +189,13 @@ albedo_texture = ExtResource("15_7a8mr")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_10xre"]
 points = PackedVector3Array(1.93735, 4, 2, -2, 0.00039481, -2, -2, 0.00039481, 2, 2, 0.00039481, -2, -2, 3.99961, -2, 2, 0.00039481, 2, 1.93735, 4, -2, -2, 3.99961, 2)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_10xre"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_prwdb"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3wv72"]
+points = PackedVector3Array(0.0422489, -0.118945, -0.408969, 0.0165157, 0.0815411, 0.43601, 0.0422421, 0.11903, 0.411016, -0.0505923, 0.412726, -0.132061, -0.050605, -0.426106, 0.0808917, 0.0421659, -0.396088, 0.159489, 0.0422442, 0.410033, -0.117934, -0.0506572, 0.079996, -0.425663, -0.0602, 0.272506, 0.285922, -0.0504745, -0.1725, 0.399204, -0.0503918, -0.344334, -0.263835, 0.0164183, 0.406299, 0.177108, 0.0422183, -0.396481, -0.157546, 0.0298727, 0.283841, -0.336756, -0.0602, -0.123801, -0.370502, 0.0298848, -0.283825, 0.338956, -0.0602, -0.321992, 0.223996, -0.0602, 0.284922, -0.271406, -0.0505051, 0.19928, 0.386278, -0.0506491, 0.426676, 0.0809798, 0.0418387, 0.301891, 0.302891, 0.0421689, 0.118865, -0.408349, 0.0163852, -0.229859, -0.377668, 0.0421634, -0.118753, 0.410406, -0.0503384, -0.34387, 0.265579, 0.0165636, -0.435675, -0.0805845, -0.0506025, -0.133095, -0.411732, -0.0503849, 0.344373, 0.265889, -0.0602, -0.371502, -0.122801, -0.0503911, 0.26493, -0.343327, -0.0506565, -0.0798947, 0.427756, 0.0423777, 0.424358, 0.0407562)
+
 [node name="World2" type="Node3D"]
 script = ExtResource("1_cbera")
 
@@ -223,22 +235,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Chandelier" parent="Lights/Line" instance=ExtResource("5_8fnjk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, -5)
 
-[node name="Chandelier2" parent="Lights/Line" instance=ExtResource("5_8fnjk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, 0)
-
 [node name="Chandelier3" parent="Lights/Line" instance=ExtResource("5_8fnjk")]
-transform = Transform3D(0.755451, 0, 0, 0, 0.755451, 0, 0, 0, 0.755451, 5, 4, 5)
-
-[node name="Line2" type="Node3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 0)
-
-[node name="Chandelier" parent="Lights/Line2" instance=ExtResource("5_8fnjk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, -5)
-
-[node name="Chandelier2" parent="Lights/Line2" instance=ExtResource("5_8fnjk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, 0)
-
-[node name="Chandelier3" parent="Lights/Line2" instance=ExtResource("5_8fnjk")]
 transform = Transform3D(0.755451, 0, 0, 0, 0.755451, 0, 0, 0, 0.755451, 5, 4, 5)
 
 [node name="Line3" type="Node3D" parent="Lights"]
@@ -246,9 +243,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 0)
 
 [node name="Chandelier" parent="Lights/Line3" instance=ExtResource("5_8fnjk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, -5)
-
-[node name="Chandelier2" parent="Lights/Line3" instance=ExtResource("5_8fnjk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, 0)
 
 [node name="Chandelier3" parent="Lights/Line3" instance=ExtResource("5_8fnjk")]
 transform = Transform3D(0.755451, 0, 0, 0, 0.755451, 0, 0, 0, 0.755451, 5, 4, 5)
@@ -329,10 +323,19 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
+[node name="ScrollableWall" type="GridMap" parent="Map"]
+mesh_library = ExtResource("6_ep3ay")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(5, 65526, 3, 65545, 65532, 3, 65545, 65533, 3, 65545, 65534, 3, 65545, 65535, 3, 65545, 0, 3, 65545, 1, 3, 65545, 2, 3, 65545, 3, 3, 65545, 4, 3, 65545, 5, 3, 65545, 6, 3, 131081, 65532, 3, 131081, 65533, 3, 131081, 65534, 3, 131081, 65535, 3, 131081, 0, 3, 131081, 1, 3, 131081, 2, 3, 131081, 3, 3, 131081, 4, 3, 131081, 5, 3, 131081, 6, 3, 196617, 65532, 3, 196617, 65533, 3, 196617, 65534, 3, 196617, 65535, 3, 196617, 0, 3, 196617, 1, 3, 196617, 2, 3, 196617, 3, 3, 196617, 4, 3, 196617, 5, 3, 196617, 6, 3)
+}
+script = ExtResource("6_vjenb")
+metadata/_editor_floor_ = Vector3(5, 0, 0)
+
 [node name="Objects" type="Node3D" parent="."]
 
 [node name="Door" type="MeshInstance3D" parent="Objects"]
-transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 0, 1, -9.196)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.75177, 1, -3.74253)
 mesh = ExtResource("7_mihkl")
 skeleton = NodePath("../..")
 
@@ -360,7 +363,7 @@ stream = ExtResource("16_jdd1v")
 stream = ExtResource("17_0r02l")
 
 [node name="Book" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -7.26459, 1.07445, 3.63656)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.98805, 1.23553, 3.63656)
 mesh = ExtResource("18_7tqwt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Book"]
@@ -370,7 +373,7 @@ script = ExtResource("19_vjenb")
 shape = SubResource("ConvexPolygonShape3D_10xre")
 
 [node name="Code_Book" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.60188, 1.07445, 3.85229)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.52569, 1.66182, 3.85229)
 mesh = ExtResource("18_7tqwt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Code_Book"]
@@ -380,7 +383,7 @@ script = ExtResource("20_vjenb")
 shape = SubResource("ConvexPolygonShape3D_10xre")
 
 [node name="Note_Book" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.47265, 1.13743, 3.85229)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.38983, 1.39702, 3.31125)
 mesh = ExtResource("18_7tqwt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Note_Book"]
@@ -389,11 +392,110 @@ script = ExtResource("21_10xre")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Note_Book/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_10xre")
 
+[node name="ButtonDoor" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.12823, 1.39702, 3.31125)
+mesh = ExtResource("18_7tqwt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ButtonDoor"]
+script = ExtResource("19_7tqwt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonDoor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_10xre")
+
 [node name="chestAnim" parent="." instance=ExtResource("18_ildo7")]
 transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 5.81921, 0.934948, -4.42734)
+
+[node name="WatchNode" type="Node3D" parent="."]
+
+[node name="Watch" type="MeshInstance3D" parent="WatchNode"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.30901, 4.78562)
+mesh = ExtResource("22_prwdb")
+skeleton = NodePath("../..")
+script = ExtResource("22_p4tum")
+
+[node name="QuadMesh" type="MeshInstance3D" parent="WatchNode/Watch"]
+transform = Transform3D(-2.18557e-08, -0.01, 1.54271e-29, 0.5, -4.37114e-10, -3.5293e-22, 3.5293e-22, 0, 0.5, -0.00401783, 0, 1.75646e-10)
+mesh = SubResource("CylinderMesh_10xre")
+
+[node name="WatchHands" type="Node3D" parent="WatchNode/Watch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21634, 0, 5.31679e-08)
+
+[node name="HoursHand" type="Node3D" parent="WatchNode/Watch/WatchHands"]
+transform = Transform3D(1, 0, 0, 0, 0.999391, -0.0348995, 0, 0.0348995, 0.999391, 0.972795, 0, -4.25222e-08)
+
+[node name="Hours" type="MeshInstance3D" parent="WatchNode/Watch/WatchHands/HoursHand"]
+transform = Transform3D(-0.000488644, 0.0354044, 0.998421, -1.74622e-09, -0.699104, 0.0505928, 0.019994, 0.000865205, 0.0244009, 0.293834, 0, -1.2844e-08)
+mesh = SubResource("QuadMesh_prwdb")
+skeleton = NodePath("../../..")
+
+[node name="MinuteHand" type="Node3D" parent="WatchNode/Watch/WatchHands"]
+transform = Transform3D(1, 0, 0, 0, 0.999391, -0.0348995, 0, 0.0348995, 0.999391, 0.972795, 0, -4.25222e-08)
+
+[node name="Minutes" type="MeshInstance3D" parent="WatchNode/Watch/WatchHands/MinuteHand"]
+transform = Transform3D(-0.000244322, 0.0354044, 0.998421, -8.73108e-10, -0.699104, 0.0505928, 0.00999701, 0.000865205, 0.0244009, 0.293834, 0, -1.2844e-08)
+mesh = SubResource("QuadMesh_prwdb")
+skeleton = NodePath("../../..")
+
+[node name="SecondsHand" type="Node3D" parent="WatchNode/Watch/WatchHands"]
+transform = Transform3D(1, 0, 0, 0, 0.999391, -0.0348995, 0, 0.0348995, 0.999391, 0.972795, 0, -4.25222e-08)
+
+[node name="Seconds" type="MeshInstance3D" parent="WatchNode/Watch/WatchHands/SecondsHand"]
+transform = Transform3D(-0.000122161, 0.0354044, 0.998421, -4.36554e-10, -0.699104, 0.0505928, 0.00499851, 0.000865205, 0.0244009, 0.293834, 0, -1.2844e-08)
+mesh = SubResource("QuadMesh_prwdb")
+skeleton = NodePath("../../..")
+
+[node name="InteractiveWatchNode" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85997, 0, 0)
+
+[node name="Watch" type="MeshInstance3D" parent="InteractiveWatchNode"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.57044, 2.3825, 4.78562)
+mesh = ExtResource("22_prwdb")
+skeleton = NodePath("../..")
+
+[node name="QuadMesh" type="MeshInstance3D" parent="InteractiveWatchNode/Watch"]
+transform = Transform3D(-2.18557e-08, -0.01, 1.54271e-29, 0.5, -4.37114e-10, -3.5293e-22, 3.5293e-22, 0, 0.5, -0.00401783, 0, 1.75646e-10)
+mesh = SubResource("CylinderMesh_10xre")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="InteractiveWatchNode/Watch"]
+transform = Transform3D(1, -3.55271e-15, 0, 0, 1, -7.05853e-23, 0, 1.28824e-22, 1, 0, 0, 0)
+script = ExtResource("23_p4tum")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractiveWatchNode/Watch/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3wv72")
+
+[node name="WatchHands" type="Node3D" parent="InteractiveWatchNode/Watch/StaticBody3D"]
+transform = Transform3D(1, 3.55271e-15, 0, 0, 1, 7.05853e-23, 0, -1.28824e-22, 1, -1.21634, 0, 3.57628e-07)
+
+[node name="HoursHand" type="Node3D" parent="InteractiveWatchNode/Watch/StaticBody3D/WatchHands"]
+transform = Transform3D(1, 0, 0, 0, 0.999391, -0.0348995, 0, 0.0348995, 0.999391, 0.972795, 0, -4.25222e-08)
+
+[node name="Hours" type="MeshInstance3D" parent="InteractiveWatchNode/Watch/StaticBody3D/WatchHands/HoursHand"]
+transform = Transform3D(-0.000488644, 0.0354044, 0.998421, -1.74622e-09, -0.699104, 0.0505928, 0.019994, 0.000865205, 0.0244009, 0.293834, 0, -1.2844e-08)
+mesh = SubResource("QuadMesh_prwdb")
+skeleton = NodePath("../../../..")
+
+[node name="MinuteHand" type="Node3D" parent="InteractiveWatchNode/Watch/StaticBody3D/WatchHands"]
+transform = Transform3D(1, 0, 0, 0, 0.999391, -0.0348995, 0, 0.0348995, 0.999391, 0.972795, 0, -4.25222e-08)
+
+[node name="Minutes" type="MeshInstance3D" parent="InteractiveWatchNode/Watch/StaticBody3D/WatchHands/MinuteHand"]
+transform = Transform3D(-0.000244322, 0.0354044, 0.998421, -8.73108e-10, -0.699104, 0.0505928, 0.00999701, 0.000865205, 0.0244009, 0.293834, 0, -1.2844e-08)
+mesh = SubResource("QuadMesh_prwdb")
+skeleton = NodePath("../../../..")
+
+[node name="SecondsHand" type="Node3D" parent="InteractiveWatchNode/Watch/StaticBody3D/WatchHands"]
+transform = Transform3D(1, 0, 0, 0, 0.999391, -0.0348995, 0, 0.0348995, 0.999391, 0.972795, 0, -4.25222e-08)
+
+[node name="Seconds" type="MeshInstance3D" parent="InteractiveWatchNode/Watch/StaticBody3D/WatchHands/SecondsHand"]
+transform = Transform3D(-0.000122161, 0.0354044, 0.998421, -4.36554e-10, -0.699104, 0.0505928, 0.00499851, 0.000865205, 0.0244009, 0.293834, 0, -1.2844e-08)
+mesh = SubResource("QuadMesh_prwdb")
+skeleton = NodePath("../../../..")
 
 [connection signal="interacted" from="Objects/Door/StaticBody3D" to="Objects/Door/StaticBody3D" method="_on_interacted"]
 [connection signal="interaction_finished" from="Objects/Door/StaticBody3D" to="Objects/Door/StaticBody3D" method="_on_interaction_finished"]
 [connection signal="interacted" from="Book/StaticBody3D" to="Book/StaticBody3D" method="_on_interacted"]
 [connection signal="interacted" from="Code_Book/StaticBody3D" to="Code_Book/StaticBody3D" method="_on_interacted"]
 [connection signal="interacted" from="Note_Book/StaticBody3D" to="Note_Book/StaticBody3D" method="_on_interacted"]
+[connection signal="interacted" from="ButtonDoor/StaticBody3D" to="ButtonDoor/StaticBody3D" method="_on_interacted"]
+[connection signal="move_door" from="ButtonDoor/StaticBody3D" to="Map/ScrollableWall" method="_on_static_body_3d_move_door"]
+[connection signal="interacted" from="InteractiveWatchNode/Watch/StaticBody3D" to="InteractiveWatchNode/Watch/StaticBody3D" method="_on_interacted"]
+[connection signal="move_door" from="InteractiveWatchNode/Watch/StaticBody3D" to="Map/ScrollableWall" method="_on_static_body_3d_move_door"]
