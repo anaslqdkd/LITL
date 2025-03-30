@@ -6,7 +6,7 @@ extends Control
 var correct_password = "1558"
 var password = ""
 
-var scene_library = load("res://src/levels/library_1.tscn")
+var scene_final = load("res://src/levels/final.tscn")
 
 signal on_keypad_press
 signal on_correct_password
@@ -75,8 +75,8 @@ func go_to_library():
 	call_deferred("_change_scene")
 
 func _change_scene():
-	if scene_library:
-		get_tree().change_scene_to_packed(scene_library)
+	if scene_final:
+		get_tree().change_scene_to_packed(scene_final)
 	else:
 		print("Error: Scene not loaded properly!")
 	

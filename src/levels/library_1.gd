@@ -1,7 +1,7 @@
 extends Node3D
 
 const scene_library = preload("res://src/levels/library_1.tscn")
-const scene_level = preload("res://src/levels/level_1.tscn")
+const scene_level = preload("res://src/levels/level1.tscn")
 const menu_scene = preload("res://src/main_menu.tscn")
 
 var level_tag = "library"
@@ -30,7 +30,6 @@ func open_menu():
 
 func go_to_scene(scene_tag, dest):
 	var scene_to_load
-	
 	match scene_tag:
 		"library":
 			scene_to_load = scene_library

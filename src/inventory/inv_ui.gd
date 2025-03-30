@@ -37,12 +37,12 @@ func update_slots():
 			slots[i].modulate = Color(1, 1, 1)
 
 func _process(delta: float) -> void:
-	if current_scene and current_scene.has_method("set_is_in_inventory"):  
-		current_scene.set_is_in_inventory(is_focused)  
-
+	if is_focused:
+		current_scene.is_in_inventory = true
+	if !is_focused:
+		current_scene.is_in_inventory = false
 	if Input.is_action_just_pressed("i"):
 		is_focused = !is_focused
-
 	if is_open and is_focused:
 		handle_navigation()
 		handle_selection()
