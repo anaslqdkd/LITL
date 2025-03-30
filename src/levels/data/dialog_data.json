@@ -1,16 +1,65 @@
 {
-  "dialog1": {
-    "lines": [
-      "first line of dialog 1",
-      "second line of dialog 1",
-      "third line of dialog 1"
-    ]
-  },
-  "dialog2": {
-    "lines": [
-      "first line of dialog 2",
-      "second line of dialog 2",
-      "third line of dialog 2"
-    ]
-  }
+  "a_bee": {
+	"lines": [
+		"I know this book ! It's a mystery novel. There is surely a big mystery about the crimes happening in the book.",
+		"I don't remind the name of the island they're on... I'm sure it has to do with soldiers...",
+		"How many were there... I could count them with my fingers. "
+	]
+	},
+  "terry": {
+	"lines": [
+		"I love Pratchett's Discworld saga , it's so fun and epic !  ",
+		"He loves to use puns and surprising references to hint at his world",
+		"In the book Octarine is said to be a sort of fluorescent greenish-yellow purple. I can only imagine such a colour."
+	]
+	},
+	"ten_soldiers": {
+	"lines": [
+		"This nursery rhyme remind me of a mystery novel Gramps gave me.",
+		"I wonder why it is here...",
+		"And then there were none... Are they dead ???"
+	]
+	},
+	"shi": {
+		"lines": [
+		"Asian cultures are so different from ours, yet we all have strange beliefs.",
+		"Shi... Four... The number of deaths",
+		"Watashi wa... Huh... I can't say more in Japanese."
+	]
+	},
+	"empty_set": {
+		"lines": [
+		"Mathematics is still too hard for a kid like me.",
+		"I should just keep learning the Pythagorean theorem.",
+		"a squared plus b square = c squared... BUT WHAT IS C ??? "
+	]
+	},
+	"lipogram": {
+	"lines": [
+		"It's really hard to talk or write without using a letter.",
+		"OH ! I just did it not using the letter Z !",
+		"Okay, it was may be too easy... I should try with a vowel."
+	]
+	},
+	"copperfield": {
+	"lines": [
+		"The beginning of this book is one of my favourite of all time.",
+		"Am I the hero of my own book ?",
+		"I'd rather be the hero of muy own game !"
+	]
+	},
+	"crimes": {
+	"lines": [
+		"Grandma loves Russian litterature. Gramps told me she gave him this book when they met.",
+		"Anyway this book is way too complicated for me.",
+		"And may be a little too stressful."
+	]
+	},
+	"a_void": {
+	"lines": [
+		"It's a french book. I think Gramps told me that the translation was hard to make.",
+		"He also told me that the french title was \"La disparition\", which mean something is leaving a void...",
+		"I don't remind why but it surely looks like something is missing."
+	]
+	}
 }

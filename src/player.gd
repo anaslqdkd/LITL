@@ -17,9 +17,6 @@ func _physics_process(delta: float) -> void:
 		# print("not on the floor")
 		velocity.y -= gravity*delta
 
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
@@ -64,8 +61,12 @@ func has_item(item) -> bool:
 
 func _process(delta: float) -> void:
 	var current_scene = get_tree().current_scene
+	if not current_scene:
+		return  # Avoids error if scene is null
+
 	var player = current_scene.get_node_or_null("Player")
-	if current_scene.is_interacting or current_scene.is_in_inventory:
-		player.can_move = false
-	else:
-		player.can_move = true
+	if not player:
+		return  # Avoids error if player is null
+
+	if "is_interacting" in current_scene and "is_in_inventory" in current_scene:
+		player.can_move = not (current_scene.is_interacting or current_scene.is_in_inventory)

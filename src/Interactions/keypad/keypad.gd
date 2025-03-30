@@ -3,8 +3,10 @@ extends Control
 
 @onready var grid_container = $numbers
 @onready var code_label = $codeLabel
-var correct_password = "85"
+var correct_password = "1558"
 var password = ""
+
+var scene_library = load("res://src/levels/library_1.tscn")
 
 signal on_keypad_press
 signal on_correct_password
@@ -50,6 +52,8 @@ func _on_password_correct(password):
 	print("the correct password was entered")
 	var current_scene = get_tree().current_scene 
 	current_scene.is_interacting = false
+	go_to_library()
+	await get_tree().create_timer(5.0).timeout
 	self.queue_free()
 
 func _on_password_wrong(password):
@@ -63,3 +67,16 @@ func _on_submit_button_pressed():
 	else:
 		emit_signal("on_wrong_password", password)
 	print("the button submit was pressed")
+	
+func go_to_library():
+	LevelTransition.transition()
+	await LevelTransition.on_transition_finished
+	print("Transition finished, changing scene now!")
+	call_deferred("_change_scene")
+
+func _change_scene():
+	if scene_library:
+		get_tree().change_scene_to_packed(scene_library)
+	else:
+		print("Error: Scene not loaded properly!")
+	

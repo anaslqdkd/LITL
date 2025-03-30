@@ -106,3 +106,8 @@ func _on_animation_finished():
 func _update_buttons():
 	if current_page == 0:
 		prev_button.visible = false
+
+func _exit_tree():
+	var dialog_instance = preload("res://src/Interactions/dialog_box.tscn").instantiate()
+	dialog_instance.dialog_number = book
+	get_tree().current_scene.add_child(dialog_instance)

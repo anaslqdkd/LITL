@@ -23,3 +23,8 @@ func _load_note():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		queue_free()
+		
+func _exit_tree():
+	var dialog_instance = preload("res://src/Interactions/dialog_box.tscn").instantiate()
+	dialog_instance.dialog_number = note
+	get_tree().current_scene.add_child(dialog_instance)
