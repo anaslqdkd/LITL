@@ -61,5 +61,19 @@
 		"He also told me that the french title was \"La disparition\", which mean something is leaving a void...",
 		"I don't remind why but it surely looks like something is missing."
 	]
+	},
+	"book2": {
+	"lines": [
+		"It's a french book. I think Gramps told me that the translation was hard to make.",
+		"He also told me that the french title was \"La disparition\", which mean something is leaving a void...",
+		"I don't remind why but it surely looks like something is missing."
+	]
+	},
+	"book1": {
+	"lines": [
+		"It's a french book. I think Gramps told me that the translation was hard to make.",
+		"He also told me that the french title was \"La disparition\", which mean something is leaving a void...",
+		"I don't remind why but it surely looks like something is missing."
+	]
 	}
 }
