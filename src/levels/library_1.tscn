@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://b7wwchqv7bfsc"]
+[gd_scene load_steps=46 format=3 uid="uid://b7wwchqv7bfsc"]
 
 [ext_resource type="Script" uid="uid://c1vd7bdrncvh1" path="res://src/levels/library_1.gd" id="1_cbera"]
 [ext_resource type="PackedScene" uid="uid://chmdec0eswtq6" path="res://src/player.tscn" id="2_odxcg"]
@@ -20,6 +20,8 @@
 [ext_resource type="Script" uid="uid://b88wgx0bfljdi" path="res://src/levels/interactable_book.gd" id="19_vjenb"]
 [ext_resource type="Script" uid="uid://cowtju2b1348d" path="res://src/levels/code_book.gd" id="20_vjenb"]
 [ext_resource type="Script" uid="uid://de5ys5haoxi42" path="res://src/levels/note_book.gd" id="21_10xre"]
+[ext_resource type="PackedScene" uid="uid://ducgbjrl0tivk" path="res://src/levels/watch.tscn" id="21_prwdb"]
+[ext_resource type="ArrayMesh" uid="uid://bqekmb33146ub" path="res://assets/meshes/Clock_Constraints_for_Animations/Clock_obj.obj" id="22_prwdb"]
 
 [sub_resource type="Animation" id="Animation_qgpte"]
 resource_name = "Opening_Cutscene"
@@ -185,6 +187,8 @@ albedo_texture = ExtResource("15_7a8mr")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_10xre"]
 points = PackedVector3Array(1.93735, 4, 2, -2, 0.00039481, -2, -2, 0.00039481, 2, 2, 0.00039481, -2, -2, 3.99961, -2, 2, 0.00039481, 2, 1.93735, 4, -2, -2, 3.99961, 2)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_10xre"]
 
 [node name="World2" type="Node3D"]
 script = ExtResource("1_cbera")
@@ -401,6 +405,16 @@ shape = SubResource("ConvexPolygonShape3D_10xre")
 
 [node name="chestAnim" parent="." instance=ExtResource("18_ildo7")]
 transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 5.81921, 0.934948, -4.42734)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.30901, 4.78562)
+mesh = ExtResource("22_prwdb")
+
+[node name="Watch" parent="MeshInstance3D" instance=ExtResource("21_prwdb")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(-2.18557e-08, -0.01, 1.54271e-29, 0.5, -4.37114e-10, -3.5293e-22, 3.5293e-22, 0, 0.5, -0.00401783, 0, 1.75646e-10)
+mesh = SubResource("CylinderMesh_10xre")
 
 [connection signal="interacted" from="Objects/Door/StaticBody3D" to="Objects/Door/StaticBody3D" method="_on_interacted"]
 [connection signal="interaction_finished" from="Objects/Door/StaticBody3D" to="Objects/Door/StaticBody3D" method="_on_interaction_finished"]

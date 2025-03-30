@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ducgbjrl0tivk"]
+
+[ext_resource type="Texture2D" uid="uid://eicnd7sdvxcv" path="res://assets/sprites/watch.png" id="1_2j82h"]
+[ext_resource type="Script" uid="uid://8doe57rmf2dk" path="res://src/levels/watch.gd" id="1_hqkxs"]
+
+[node name="Watch" type="Node2D"]
+script = ExtResource("1_hqkxs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+scale = Vector2(6.3125, 5.375)
+texture = ExtResource("1_2j82h")
+
+[node name="SecondHand" type="Line2D" parent="."]
+width = 1.0
+default_color = Color(1, 1, 0, 1)
+
+[node name="MinuteHand" type="Line2D" parent="."]
+width = 3.0
+default_color = Color(1, 0, 1, 1)
+
+[node name="HourHand" type="Line2D" parent="."]
+width = 5.0
+default_color = Color(0, 0, 1, 1)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
