@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LITL"
-run/main_scene="uid://b7wwchqv7bfsc"
+run/main_scene="uid://xjawx0r74o54"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,7 @@ LevelTransition="*res://level_transition.tscn"
 MenuManager="*res://src/ui/MenuManager.gd"
 NotificationPanel="*res://src/ui/notification_panel.tscn"
 LightsState="*res://src/levels/lights_state.gd"
+BackgroundMusic="*res://background_music.tscn"
 
 [display]
 

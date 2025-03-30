@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh4cls2rv11xp"]
+
+[ext_resource type="AudioStream" uid="uid://bvhsvwpksubuw" path="res://assets/music/LITL.wav" id="1_4m5bw"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_4m5bw")
+volume_db = -10.0
+autoplay = true
