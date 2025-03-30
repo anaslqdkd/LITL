@@ -45,8 +45,9 @@ func _process(delta):
 		
 		for area in overlapping_areas:
 			if area.name == "Note":
-				paper_instance.note = "note"
+				var sprite = paper_instance.get_node("PaperSprite")
 				if Input.is_action_just_pressed("mouse_click_left") and not player.has_item(paper_note_item):
+					paper_instance.note = "note"
 					current_scene.add_child(paper_instance)
 					# paper_instance.queue_free()
 
@@ -81,6 +82,7 @@ func _on_sprite_clicked():
 		player = current_scene.get_node_or_null("Player")
 		player.collect(magn_glass)
 		NotificationPanel.send_notification("magnifying glass added to the inventory")
+		current_scene.is_in_inventory = false
 		queue_free()
 
 func _on_mouse_entered() -> void:

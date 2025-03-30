@@ -62,7 +62,20 @@
 		"I don't remind why but it surely looks like something is missing."
 	]
 	},
-	"book2": {
+	"valley_of_fear": {
+	"lines": [
+		"This cipher seems genius, i may want to use it in my future adventures",
+		"The particular page on this was also so worn out, it looks like it was often read...",
+	]
+	},
+	"the_great_gatsby": {
+	"lines": [
+		"This way my grandad's favourite book but it seems to have missing pages",
+		"There was also this note...",
+		"I can't read it, the text is too small"
+	]
+	},
+	"book1": {
 	"lines": [
 		"It's a french book. I think Gramps told me that the translation was hard to make.",
 		"He also told me that the french title was \"La disparition\", which mean something is leaving a void...",

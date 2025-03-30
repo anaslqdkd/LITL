@@ -54,6 +54,7 @@ func _on_sprite_clicked():
 		inspect_mode.emit()
 		emit_signal("inspect_mode")
 		player.collect(note)
+	current_scene.is_in_inventory = false
 	queue_free()
 	can_click = false
 

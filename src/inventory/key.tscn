@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bwo4ptjq0eqmc" path="res://assets/sprites/key.png" id="2_ecyc8"]
 
 [node name="Key" type="Area2D"]
-position = Vector2(155, 51)
+position = Vector2(11, 67)
 script = ExtResource("1_wr7c8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

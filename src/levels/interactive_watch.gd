@@ -67,7 +67,9 @@ func increase_time_by_10_seconds():
 	check_time()
 
 func check_time():
-	if player_time["hour"] == target_time["hour"] : 
+	print(player_time["hour"])
+	print(target_time["hour"])
+	if player_time["hour"] == (target_time["hour"]%12) : 
 		print("Correct time set!")
 		move_door.emit()
 		end_interaction()

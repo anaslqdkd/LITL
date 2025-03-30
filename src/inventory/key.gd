@@ -19,6 +19,7 @@ func _on_sprite_clicked():
 	var key_item = preload("res://src/inventory/items/key.tres")
 	player.collect(key_item)
 	NotificationPanel.send_notification("key added to the inventory")
+	current_scene.is_in_inventory = false
 	queue_free()
 
 

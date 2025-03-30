@@ -29,7 +29,7 @@ offset_bottom = 322.0
 scale = Vector2(0.68, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_wk4kf")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 20
 autowrap_mode = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

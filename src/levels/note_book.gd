@@ -16,7 +16,7 @@ func _on_interacted() -> void:
 	if not book_scene:
 		return
 	self.book_instance = book_scene.instantiate()
-	self.book_instance.book = "book2"
+	self.book_instance.book = "the_great_gatsby"
 	print(book_instance)
 	book_instance.connect("page_changed", Callable(self, "_on_page_changed"))
 	book_instance.connect("page_changed_2", Callable(self, "_on_page_changed_2"))
@@ -41,5 +41,6 @@ func _on_page_changed_2():
 
 func _on_animation_finished():
 	if note_instance:
+		NotificationPanel.send_notification("Tip: you can click on an item to acquire it")
 		current_scene.add_child(note_instance)
 	return
