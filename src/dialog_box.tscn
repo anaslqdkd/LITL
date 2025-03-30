@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwxc6fa6vi1gb"]
 
-[ext_resource type="Texture2D" uid="uid://csxvjfpdkrp16" path="res://assets/dialog_box.png" id="1_hrk27"]
+[ext_resource type="Texture2D" uid="uid://d08hn63rws0rn" path="res://assets/sprites/dialog_box.png" id="1_hrk27"]
 [ext_resource type="Script" uid="uid://bpywlrf6i4ffn" path="res://src/dialog_box.gd" id="1_tx2l6"]
 [ext_resource type="FontFile" uid="uid://cv8q7j0yi5rt0" path="res://assets/JMH Typewriter.ttf" id="3_hwo4p"]
 
