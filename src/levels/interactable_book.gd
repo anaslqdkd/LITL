@@ -12,7 +12,7 @@ func _on_interacted() -> void:
 	if not book_scene:
 		return
 	self.book_instance = book_scene.instantiate()
-	self.book_instance.book = "book1"
+	self.book_instance.book = "book2"
 	add_child(book_instance)
 	var key_item = preload("res://src/inventory/items/key.tres")
 	var key_scene = load("res://src/inventory/key.tscn")  
