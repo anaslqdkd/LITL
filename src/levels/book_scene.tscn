@@ -597,6 +597,7 @@ vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_52wie")
+volume_db = -16.566
 
 [connection signal="pressed" from="ButtonNext" to="." method="_on_button_next_pressed"]
 [connection signal="pressed" from="ButtonPrev" to="." method="_on_button_prev_pressed"]

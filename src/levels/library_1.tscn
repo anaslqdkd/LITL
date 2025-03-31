@@ -9,7 +9,7 @@
 [ext_resource type="MeshLibrary" uid="uid://cq6usy1jsasv2" path="res://new_mesh_library.tres" id="6_ep3ay"]
 [ext_resource type="Script" uid="uid://dcewra1nlpb7a" path="res://src/levels/scrollable_wall.gd" id="6_vjenb"]
 [ext_resource type="ArrayMesh" uid="uid://24or723yakdl" path="res://assets/meshes/door.obj" id="7_mihkl"]
-[ext_resource type="Script" path="res://src/levels/door_lib.gd" id="10_75hqv"]
+[ext_resource type="Script" uid="uid://dosvw8n18740w" path="res://src/levels/door_lib.gd" id="10_75hqv"]
 [ext_resource type="ArrayMesh" uid="uid://bpxtjf3ggr4x5" path="res://assets/meshes/frame.obj" id="13_elwu1"]
 [ext_resource type="Texture2D" uid="uid://7ri7s37r7w8k" path="res://assets/meshes/frame.png" id="14_7a8mr"]
 [ext_resource type="Texture2D" uid="uid://c181wg57ndtc8" path="res://assets/images/frame_image.jpg" id="15_7a8mr"]
