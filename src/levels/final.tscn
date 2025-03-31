@@ -166,15 +166,6 @@ albedo_texture = ExtResource("3_1nfkf")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_segch"]
 albedo_texture = ExtResource("7_6jvls")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jvls"]
-albedo_texture = ExtResource("5_d2o5d")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7syj"]
-albedo_texture = ExtResource("3_1nfkf")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pp25"]
-albedo_texture = ExtResource("3_1nfkf")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nfkf"]
 albedo_texture = ExtResource("7_6jvls")
 
@@ -185,6 +176,15 @@ albedo_texture = ExtResource("5_d2o5d")
 albedo_texture = ExtResource("3_1nfkf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gruom"]
+albedo_texture = ExtResource("3_1nfkf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jvls"]
+albedo_texture = ExtResource("5_d2o5d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7syj"]
+albedo_texture = ExtResource("3_1nfkf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pp25"]
 albedo_texture = ExtResource("3_1nfkf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpk7n"]
@@ -420,6 +420,33 @@ material_override = SubResource("StandardMaterial3D_segch")
 mesh = ExtResource("8_w7syj")
 skeleton = NodePath("../../../Map")
 
+[node name="Terry2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.148873, 0, -0.0918806, 0, 0.180601, 0, 0.0918806, 0, -0.148873, -1.77834, 1.46657, -1.23468)
+material_override = SubResource("StandardMaterial3D_1nfkf")
+mesh = ExtResource("8_w7syj")
+skeleton = NodePath("../Bee")
+
+[node name="pile" type="MeshInstance3D" parent="Terry2"]
+transform = Transform3D(-1.1013, 0, -0.476599, 0, 1.2, 0, 0.476599, 0, -1.1013, 0.678053, -2.41414, -0.00901794)
+material_override = SubResource("StandardMaterial3D_btjxb")
+mesh = ExtResource("4_btjxb")
+skeleton = NodePath(".")
+
+[node name="Book1" type="MeshInstance3D" parent="Terry2/pile"]
+transform = Transform3D(0.379558, 0, -0.464689, 0, 0.6, 0, 0.464689, 0, 0.379558, 0.366919, 1.6466, 0.0926704)
+material_override = SubResource("StandardMaterial3D_btjxb")
+mesh = ExtResource("4_btjxb")
+
+[node name="Book2" type="MeshInstance3D" parent="Terry2/pile"]
+transform = Transform3D(0.798236, 0, -0.2393, 0, 0.833333, 0, 0.2393, 0, 0.798236, 0.184666, 0.606127, -0.07411)
+material_override = SubResource("StandardMaterial3D_d2o5d")
+mesh = ExtResource("6_gruom")
+
+[node name="Book3" type="MeshInstance3D" parent="Terry2/pile"]
+transform = Transform3D(0.916984, 0, 0.173929, 0, 0.933333, 0, -0.173929, 0, 0.916984, 0.196499, 1.09863, -0.0925217)
+material_override = SubResource("StandardMaterial3D_gruom")
+mesh = ExtResource("8_w7syj")
+
 [node name="pile3" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.20166, 0, -0.246889, 0, 0.323955, 0, 0.246889, 0, 0.20166, 1.33583, 1.00814, 3.68547)
 material_override = SubResource("StandardMaterial3D_6jvls")
@@ -471,42 +498,8 @@ material_override = SubResource("StandardMaterial3D_gruom")
 mesh = ExtResource("8_w7syj")
 skeleton = NodePath("../../../pile")
 
-[node name="Terry" type="MeshInstance3D" parent="Terry"]
-transform = Transform3D(-0.155045, 0, 0.546429, 0, 0.577, 0, -0.546429, 0, -0.155045, 20.7974, -0.892614, 11.1527)
-material_override = SubResource("StandardMaterial3D_1nfkf")
-mesh = ExtResource("8_w7syj")
-skeleton = NodePath("../Bee")
-
-[node name="pile" type="MeshInstance3D" parent="Terry/Terry"]
-transform = Transform3D(-1.1013, 0, -0.476599, 0, 1.2, 0, 0.476599, 0, -1.1013, 0.678053, -2.41414, -0.00901794)
-material_override = SubResource("StandardMaterial3D_btjxb")
-mesh = ExtResource("4_btjxb")
-skeleton = NodePath("../../pile")
-
-[node name="Book1" type="MeshInstance3D" parent="Terry/Terry/pile"]
-transform = Transform3D(0.379558, 0, -0.464689, 0, 0.6, 0, 0.464689, 0, 0.379558, 0.366919, 1.6466, 0.0926704)
-material_override = SubResource("StandardMaterial3D_btjxb")
-mesh = ExtResource("4_btjxb")
-
-[node name="Book2" type="MeshInstance3D" parent="Terry/Terry/pile"]
-transform = Transform3D(0.798236, 0, -0.2393, 0, 0.833333, 0, 0.2393, 0, 0.798236, 0.184666, 0.606127, -0.07411)
-material_override = SubResource("StandardMaterial3D_d2o5d")
-mesh = ExtResource("6_gruom")
-skeleton = NodePath("../../../pile")
-
-[node name="Book3" type="MeshInstance3D" parent="Terry/Terry/pile"]
-transform = Transform3D(0.916984, 0, 0.173929, 0, 0.933333, 0, -0.173929, 0, 0.916984, 0.196499, 1.09863, -0.0925217)
-material_override = SubResource("StandardMaterial3D_gruom")
-mesh = ExtResource("8_w7syj")
-skeleton = NodePath("../../../pile")
-
 [node name="Book1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.179317, 0, -0.240511, 0, 0.3, 0, 0.240511, 0, 0.179317, 9.11154, 1, 6.34832)
-material_override = SubResource("StandardMaterial3D_gpk7n")
-mesh = ExtResource("4_btjxb")
-
-[node name="Book1" type="MeshInstance3D" parent="Book1"]
-transform = Transform3D(0.364611, 0, -0.489038, 0, 0.61, 0, 0.489038, 0, 0.364611, -10.7554, 3.13509, 14.4147)
 material_override = SubResource("StandardMaterial3D_gpk7n")
 mesh = ExtResource("4_btjxb")
 
@@ -516,20 +509,26 @@ material_override = SubResource("StandardMaterial3D_bebq3")
 mesh = ExtResource("13_w7syj")
 skeleton = NodePath("")
 
+[node name="Book1" type="MeshInstance3D" parent="Escalier"]
+transform = Transform3D(0.475735, 0, 0.398117, 0, 0.620339, 0, -0.398117, 0, 0.475735, 0.451472, 3.30393, -1.16179)
+material_override = SubResource("StandardMaterial3D_gpk7n")
+mesh = ExtResource("4_btjxb")
+skeleton = NodePath("../../Book1")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Escalier"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Escalier/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_fn3di")
 
-[node name="Escalier" type="MeshInstance3D" parent="Escalier"]
-transform = Transform3D(-0.833982, 0, -0.551791, 0, 1, 0, 0.551791, 0, -0.833982, -13.4772, 0.047368, 29.0986)
+[node name="Escalier2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.115361, 0, 0.271508, 0, 0.295, 0, -0.271508, 0, 0.115361, 2.2171, 0.979842, -3.36576)
 material_override = SubResource("StandardMaterial3D_bebq3")
 mesh = ExtResource("13_w7syj")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Escalier/Escalier"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Escalier2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Escalier/Escalier/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Escalier2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_fn3di")
 
 [node name="Book2" type="MeshInstance3D" parent="."]

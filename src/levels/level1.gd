@@ -3,8 +3,10 @@ extends Node3D
 var level_tag = "library"
 var is_interacting: bool = false
 var is_in_inventory: bool = false
+
+
 func _ready() -> void:
-	pass
+	_load_dialog_box()
 
 
 func _input(event):
@@ -25,7 +27,7 @@ func _load_dialog_box():
 		print("Error: Failed to load dialog scene")
 		return 
 	var dialog_box_instance = dialog_box_scene.instantiate()
-	dialog_box_instance.dialog_number = "dialog2"
+	dialog_box_instance.dialog_number = "Level"
 	add_child(dialog_box_instance)
 
 

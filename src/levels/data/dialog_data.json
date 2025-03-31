@@ -75,5 +75,41 @@
 		"I can't read it, the text is too small"
 
 	]
+	},
+	"book1": {
+	"lines": [
+		"This way my grandad's favourite book but it seems to have missing pages",
+		"There was also this note...",
+		"I can't read it, the text is too small"
+
+	]
+	},
+	"note": {
+	"lines": [
+		"I can finally read the note !",
+		"What does that mean... numbers ? Is it a code ? ",
+		"May be it's the language of robots. Bip Bip Boop Boop 42 42 42 42..."
+	]
+	},
+	"wuthering_heights": {
+	"lines": [
+		"I never heard about this book...",
+		"I'm sure Gramps as already read it.",
+		"I think Gramps knows every books but he swears he didn't."
+	]
+	},
+	"Begin": {
+	"lines": [
+		"Finally ! I achieve to enter the library while Gramps went to sleep",
+		"I will finally be able to find the secret of the library.",
+		"I know Gramps is hiding secrets. I have to find clues !"
+	]
+	},
+	"Level": {
+	"lines": [
+		"Where am I ? It looks like i'm dreaming... Gramps who could hess Gramps had a secret door.",
+		"Another door ? It looks like there is other secrets in this room.",
+		"So many books to read... I will get older if i have to read everything ! "
+	]
 	}
 }
