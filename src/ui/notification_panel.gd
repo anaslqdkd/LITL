@@ -7,7 +7,7 @@ func _ready() -> void:
 	self.visible = false
 
 func send_notification(message: String, duration: float = 3.0):
-	# notification_sound.play()
+	notification_sound.play()
 	self.visible = true
 	notification_label.text = message
 	

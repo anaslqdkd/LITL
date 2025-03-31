@@ -126,5 +126,5 @@ func _exit_tree():
 	get_tree().current_scene.add_child(dialog_instance)
 
 func _on_page_turned():
-	pass
-	# turn_page_sound.play()
+	turn_page_sound.play()
+	# pass

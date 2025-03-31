@@ -57,12 +57,12 @@ func close():
 
 func handle_navigation():
 	if Input.is_action_just_pressed("move_right"):
-		# item_selection_sound.play()
+		item_selection_sound.play()
 		selected_index = (selected_index + 1)%inv.slots.size() 
 		print("the selected_index is after move right", selected_index)
 		update_slots()
 	if Input.is_action_just_pressed("move_left"):
-		# item_selection_sound.play()
+		item_selection_sound.play()
 		selected_index = (selected_index - 1 + inv.slots.size())%inv.slots.size()
 		update_slots()
 
